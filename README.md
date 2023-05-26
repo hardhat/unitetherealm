@@ -39,3 +39,6 @@ The king is dead.  Become the next soverign through wit and old fashioned force.
 - Army based
 
 ## Become king!
+
+### Includes
+CC0 https://opengameart.org/content/top-down-grass-beach-and-water-tileset
