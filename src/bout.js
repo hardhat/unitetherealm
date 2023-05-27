@@ -5,22 +5,16 @@ import Npc from './npc.js'
 import Hud from './hud.js'
 
 // Shows level background.  Stretch goal: scroll side to side
-var path = [];
 var destination = new Phaser.Geom.Point(15,9);
-var isFindingPath = false;
 var tapPos = new Phaser.Geom.Point(0,0);
-var isWalking = false;
+
 
 export default class Bout extends Phaser.Scene {
     constructor () {
         super('Bout');
         var borderOffset = new Phaser.Geom.Point(0,0);
-        this.isFindingPath = isFindingPath;
         this.tapPos = tapPos;
-        this.isWalking =  isWalking;
         this.borderOffset = borderOffset;
-        this.destination = destination;
-        this.path = path;
         this.whoseTurn = -1;
     }
 
@@ -52,16 +46,10 @@ export default class Bout extends Phaser.Scene {
 		this.UICamera = this.cameras.add(0,0,800,600);
 		this.container = this.add.container();
 		this.playfield = this.add.container();
-		
+
         //scene = this;
         this.buildMap();
 
-        var easystar;
-        console.log(this.listToMatrix(this.layers[1], 32));
-        this.easystar = new EasyStar.js();
-        this.easystar.setGrid(this.listToMatrix(this.layers[1], 32));
-        this.easystar.setAcceptableTiles([0]);
-        this.easystar.disableCornerCutting();
 
         /*var velocityX = 0;
         var velocityY = 0;*/
@@ -85,9 +73,7 @@ export default class Bout extends Phaser.Scene {
 
 		var x=this.centerX + 200;
 		var y=this.centerY + 400;
-		var cartPt = this.isometricToCartesian( new Phaser.Geom.Point(x,y));
-		var tilePt = this.cartesianToTile(cartPt);
-		console.log("Player "+x+","+y+" -> iso "+x+","+y+" -> cart "+cartPt.x+","+cartPt.y+" -> tile "+tilePt.x+","+tilePt.y);
+
 
 		this.playerSprite = this.add.sprite(x,y);
         this.playerSprite.setDepth(10000);
@@ -101,25 +87,20 @@ export default class Bout extends Phaser.Scene {
 		this.playfield.add(this.playerSprite);
 
         x=600;
-        cartPt = this.isometricToCartesian( new Phaser.Geom.Point(x,y));
-        tilePt = this.cartesianToTile(cartPt);
         this.npcSprite = [this.add.sprite(x,y)];
         this.npcSprite[0].setDepth(10000);
         this.npc = [new Npc({scene: this, sprite: this.npcSprite[0], x:cartPt.x, y:cartPt.y, health: health, enemyType: 'thrall'})];
         this.npc[0].createAnims();
         this.npc[0].activityPoints=3;
 		this.playfield.add(this.npcSprite[0]);
-		console.log("Thrall "+x+","+y+" -> iso "+x+","+y+" -> cart "+cartPt.x+","+cartPt.y+" -> tile "+tilePt.x+","+tilePt.y);
+
 
         x=500; y-=64;
         this.npcSprite.push(this.add.sprite(x,y));
-        cartPt = this.isometricToCartesian( new Phaser.Geom.Point(x,y));
-        tilePt = this.cartesianToTile(cartPt);
         this.npcSprite[1].setDepth(10000);
         this.npc.push(new Npc({scene: this, sprite: this.npcSprite[1], x:cartPt.x, y:cartPt.y, health: health, enemyType: 'bat'}));
 		this.playfield.add(this.npcSprite[1]);
-		console.log("Bat "+x+","+y+" -> iso "+x+","+y+" -> cart "+cartPt.x+","+cartPt.y+" -> tile "+tilePt.x+","+tilePt.y);
-        this.npc[1].activityPoints=3;
+		        this.npc[1].activityPoints=3;
 
 
         console.log("is npc [0] alive:" + this.npc[0].alive);
@@ -183,97 +164,10 @@ export default class Bout extends Phaser.Scene {
     }
     return matrix;
   }
-  findTilePath(startPt,destPt){	// Note all parameters are in tile coords.
-    if(this.isFindingPath || this.isWalking) return;
 
-    if(destPt.x > -1 && destPt.y > -1 && destPt.x < this.tilesacross && destPt.y < this.tilesdown){
-      if(this.layers[1][this.id] == 0){
-        this.isFindingPath = true;
-        this.easystar.findPath(startPt.x, startPt.y, this.destPos.x, this.destPos.y, this.plotAndMove);
-        this.easystar.calculate();
-        console.log("made path");
-      }
-    }
-  }
-  plotAndMove(newPath){
-    console.log(newPath);
-    path = newPath;
-    console.log(path);
-    isFindingPath = false;
-    if(path == null){
-      console.log("no path found");
-    } else {
-      path.push(tapPos);
-      path.reverse();
-      path.pop();
-      console.log(path.length);
-    }
-  }
-  getPath(){
-    return path;
-  }
-  screenPoint(posX, posY){//not needed anymore
-    var screenPt = new Phaser.Geom.Point();
-    screenPt.x = posX;
-    screenPt.y = posY;
-    return(this.screenPt);
-  }
-
-	cartesianToIsometric(cartPt) {
-		var tempPt=new Phaser.Geom.Point();
-		tempPt.x=cartPt.x-cartPt.y;
-		tempPt.y=(cartPt.x+cartPt.y)/2;
-		return tempPt;
-	}
-
-	isometricToCartesian(isoPt){
-		var tempPt=new Phaser.Geom.Point();
-		tempPt.x=(2*isoPt.y+isoPt.x)/2;
-		tempPt.y=(2*isoPt.y-isoPt.x)/2;
-		return tempPt;
-	}
-
-	cartesianToTile(cartPt) {
-		var tempPt=new Phaser.Geom.Point();
-		tempPt.x=Math.floor(cartPt.x/this.tileHeight);
-		tempPt.y=Math.floor(cartPt.y/this.tileHeight);
-		return tempPt;
-	}
-	
-	tileToCartesian(tilePt) {
-		var tempPt=new Phaser.Geom.Point();
-		tempPt.x=(tilePt.x+0.5) * this.tileHeight;
-		tempPt.y=(tilePt.y+0.5) * this.tileHeight;
-		return tempPt;
-	}
-
-    getTileXYType(pt){
-		var x = pt.x;
-		var y = pt.y;
-		var id;
-		id = (y * this.mapacross) + x;
-        this.id = id;
-        // Note layer 0 is grass and always passable.
-		if(this.layers[1][id] != 0){	// Blocked by rock, bush, etc.
-		  return this.layers[1][id];
-		}
-		// Note layer 2 is tops of trees, and not a barrier.
-		if(this.layers[3][id] != 0){
-          return "stick";
-        }
-        if(this.layers[4][id] != 0){
-          return "water";
-        }
-        return 0;
-    }
-
-	//  .X.
-	//  PX.
-	//  ...
-	//  XT.
 
     buildMap(){
-      var scene = this
+      /*var scene = this
       const data = scene.cache.json.get('graveyard');
       var map = this.add.tilemap('graveyard');
       console.log(map);
@@ -331,7 +225,7 @@ export default class Bout extends Phaser.Scene {
             i++;
           }
         }
-      }
+      }*/
     }
 
 
@@ -369,7 +263,7 @@ export default class Bout extends Phaser.Scene {
 		// player or enemy calls this when their activity points are used up.
 		console.log("end of turn for "+(this.whoseTurn==-1?"player":"enemy "+this.whoseTurn));
 		this.whoseTurn++;
-		
+
 		let active = null;
 
 		while(this.whoseTurn>-1 && this.whoseTurn<this.npc.length) {
@@ -385,7 +279,7 @@ export default class Bout extends Phaser.Scene {
 		if(this.whoseTurn>=this.npc.length) {
 			this.whoseTurn=-1;
 		}
-		
+
 		if(this.whoseTurn==-1) {
 			if(this.player.isAlive()) {
 				console.log("Player earned an activity point");
