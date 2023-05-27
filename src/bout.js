@@ -81,7 +81,7 @@ export default class Bout extends Phaser.Scene {
 		//this.playerSprite.setScale(4);
         this.playerSprite.flipX = true;
         var health=30;
-        this.player = new Player({scene:this, sprite: this.playerSprite, x: cartPt.x, y: cartPt.y, health: health});
+        this.player = new Player({scene:this, sprite: this.playerSprite, x:x, y:y, health: health});
         this.player.createAnim('stewie');
         this.playerSprite.play('stewieidle');
 		this.playfield.add(this.playerSprite);
@@ -89,7 +89,7 @@ export default class Bout extends Phaser.Scene {
         x=600;
         this.npcSprite = [this.add.sprite(x,y)];
         this.npcSprite[0].setDepth(10000);
-        this.npc = [new Npc({scene: this, sprite: this.npcSprite[0], x:cartPt.x, y:cartPt.y, health: health, enemyType: 'thrall'})];
+        this.npc = [new Npc({scene: this, sprite: this.npcSprite[0], x:x, y:y, health: health, enemyType: 'thrall'})];
         this.npc[0].createAnims();
         this.npc[0].activityPoints=3;
 		this.playfield.add(this.npcSprite[0]);
@@ -98,7 +98,7 @@ export default class Bout extends Phaser.Scene {
         x=500; y-=64;
         this.npcSprite.push(this.add.sprite(x,y));
         this.npcSprite[1].setDepth(10000);
-        this.npc.push(new Npc({scene: this, sprite: this.npcSprite[1], x:cartPt.x, y:cartPt.y, health: health, enemyType: 'bat'}));
+        this.npc.push(new Npc({scene: this, sprite: this.npcSprite[1], x:x, y:y, health: health, enemyType: 'bat'}));
 		this.playfield.add(this.npcSprite[1]);
 		        this.npc[1].activityPoints=3;
 
