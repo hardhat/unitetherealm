@@ -32,20 +32,12 @@ export default class Player extends Actor {
 
       this.scene.input.on('pointerdown', function(){
         const h = this.scene.tileHeight;
-      	const startTilePt = this.scene.cartesianToTile(new Phaser.Geom.Point(this.x, this.y));
-        
+
         const posX = this.scene.input.mousePointer.worldX;
         const posY = this.scene.input.mousePointer.worldY;
-        const screenPt = new Phaser.Geom.Point(posX,posY);
-        var tilePt = this.scene.cartesianToTile(this.scene.isometricToCartesian(screenPt)) 
-        console.log("Clicked at "+posX + ", " + posY + " which is tile "+tilePt.x+","+tilePt.y);
-        
+
         //this.scene.getTileXYType(tilePt);
-        this.scene.findTilePath(startTilePt,tilePt);
-        console.log(this.path);
-        console.log(this.scene.destination);
         this.activityPoints=1;
-        this.walkingPath=true;
       }, this);
       //console.log(this.scene.input.mousePointer.x);
       //console.log(this.scene.input.mousePointer.y);
@@ -56,29 +48,6 @@ export default class Player extends Actor {
       this.createPaternHint();
 	  this.scene.container.add(this.scene.playerText);
 	  this.scene.container.add(this.scene.hintText);
-    }
-    aiWalk(){
-      const tilePt = this.scene.cartesianToTile(new Phaser.Geom.Point(this.x, this.y));
-      
-      if(this.scene.path.length == 0){
-        if(tilePt.x == this.scene.destination.x && tilePt.y == this.scene.destination.y){
-          this.walkingPath = false;
-          return;
-        }
-      }
-      if(!this.walkingPath) return;
-      if(this.activityPoints==0) return;	// waiting for current action.
-
-      console.log("AI Walk with "+scene.path.length+" nodes to walk to still.");
-      this.activityPoints=0;
-      
-      if(tilePt.x == this.scene.destination.x && tilePt.y == this.scene.destination.y){
-        this.scene.destination = this.scene.path.pop();
-	    console.log("AI Walk with "+scene.path.length+" nodes to walk to still.");
-      }
-      const dx = this.scene.destination.x - tilePt.x;
-      const dy = this.scene.destination.y - tilePt.y;
-      this.playerMove(dx,dy);
     }
 
     createAnim(texture)
@@ -152,23 +121,10 @@ export default class Player extends Actor {
 	}
 
 	const anim = 'stewiewalk'+(stepX<0?'N':'');
-	console.log('player move '+dx+','+dy+': '+anim + ' facing '+(dx>=0?'left':'right'));
 	this.sprite.play(anim);
 	this.sprite.flipX = !((stepY>0));
-	const tilePt = this.scene.cartesianToTile(new Phaser.Geom.Point(this.x, this.y));
-	const newPt = this.scene.tileToCartesian(new Phaser.Geom.Point(tilePt.x+stepX,tilePt.y+stepY));
-	console.log("Player: Taking a step to "+stepX+","+stepY+" -> "+newPt.x+","+newPt.y);
 
-	const targetIsoPt = this.scene.cartesianToIsometric(new Phaser.Geom.Point(newPt.x,newPt.y));
-        this.scene.tweens.add({
-            targets: this.sprite,
-            x: targetIsoPt.x,
-            y: targetIsoPt.y,
-            duration: 1000,
-            delay: 0,
-        });
-        this.x = newPt.x;
-        this.y = newPt.y;
+
         this.scene.time.addEvent({ delay: 1000, callback: function() {
                 this.sprite.play('stewieidle');
 				this.walkActive=false;

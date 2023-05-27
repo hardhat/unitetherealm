@@ -22,7 +22,7 @@ export default class Npc extends Actor {
         this.scene.npcText = [this.addFancyText(375,300)];
 		this.scene.container.add(this.scene.npcText);	// In UI layer.
     }
-	
+
     createAnimBat(texture)
     {
         var name = texture;
@@ -108,7 +108,7 @@ export default class Npc extends Actor {
 
         const keys = [ 'walk', 'idle', 'attack', 'die' ];
     }
-	
+
 	createAnims()
 	{
 		this.createAnimBat('bat');
@@ -134,20 +134,9 @@ export default class Npc extends Actor {
 	  return this.health>0;
     }
 
-    relativeToPlayer()
-    {
-		const playerTilePt = this.scene.cartesianToTile(new Phaser.Geom.Point(
-		  this.scene.player.x,this.scene.player.y));
-		const tilePt = this.scene.cartesianToTile(new Phaser.Geom.Point(this.x,this.y));
-        this.dx = playerTilePt.x - tilePt.x;	// Vector towards player
-        this.dy = playerTilePt.y - tilePt.y;
-
-        const delta = this.dx * this.dx + this.dy * this.dy;
-        this.attackPossible = delta < this.attackRange * this.attackRange;
-        return this.attackPossible;
+    relativeToPlayer(){
     }
-
-    npcMove(dx,dy)
+		npcMove(dx,dy)
     {
 	// What step have we settled on
 	let stepX = dx==0?0:dx<0?-1:1;
@@ -160,28 +149,15 @@ export default class Npc extends Actor {
 	console.log('npc move '+dx+','+dy+': '+anim + ' facing '+(dx>=0?'left':'right'));
 	this.sprite.play(anim);
 	this.sprite.flipX = !((stepY>0));
-	const tilePt = this.scene.cartesianToTile(new Phaser.Geom.Point(this.x,this.y));
 
 	console.log(this.enemyType + ": Taking a step to "+stepX+","+stepY+" -> "+(tilePt.x+stepX)+","+(tilePt.y+stepY));
-	const newTilePt = new Phaser.Geom.Point(tilePt.x+stepX,tilePt.y+stepY);
-	const newCartPt = this.scene.tileToCartesian(newTilePt);
-	const targetPt = this.scene.cartesianToIsometric(newCartPt);
-        this.scene.tweens.add({
-            targets: this.sprite,
-            x: targetPt.x,
-            y: targetPt.y,
-            duration: 1000,
-            delay: 0,
-        });
-        this.x = newCartPt.x;
-        this.y = newCartPt.y;
-        this.scene.time.addEvent({ delay: 1000, callback: function() {
+	        this.scene.time.addEvent({ delay: 1000, callback: function() {
                 this.sprite.play(this.enemyType+'idle');
 				console.log(this.enemyType + " earned a activity point.");
 				this.scene.endOfTurn();
             }, callbackScope: this, loop: false });
     }
-	
+
 	attack()
 	{
 		this.scene.npcText[0].text=this.enemyType + ': attacking for 0 damage.';
@@ -190,7 +166,7 @@ export default class Npc extends Actor {
 			console.log(this.enemyType + " earned a activity point.");
 			this.scene.npcText[0].text='';
 			this.scene.endOfTurn();
-		}, callbackScope: this, loop: false });		
+		}, callbackScope: this, loop: false });
 	}
 
     update ()
@@ -218,7 +194,7 @@ export default class Npc extends Actor {
 					// Instead of passing turn after an animation, we end the turn immediately
 					this.scene.endOfTurn();
                 } else {
-					this.scene.endOfTurn();					
+					this.scene.endOfTurn();
 				}
             }
         }
