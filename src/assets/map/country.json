@@ -195,34 +195,6 @@
                 }, 
                 {
                  "height":0,
-                 "id":13,
-                 "name":"cap16",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"faction",
-                         "type":"string",
-                         "value":"blue"
-                        }, 
-                        {
-                         "name":"hasCastle",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"ruler",
-                         "type":"string",
-                         "value":"Stephen the Warrior"
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":475,
-                 "y":506
-                }, 
-                {
-                 "height":0,
                  "id":15,
                  "name":"cap10",
                  "point":true,
@@ -438,6 +410,34 @@
                  "width":0,
                  "x":378.666666666667,
                  "y":319.333333333333
+                }, 
+                {
+                 "height":0,
+                 "id":34,
+                 "name":"cap16",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"faction",
+                         "type":"string",
+                         "value":"blue"
+                        }, 
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"ruler",
+                         "type":"string",
+                         "value":"Stephen the Warrior"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":440.333333333333,
+                 "y":538.333333333333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -537,7 +537,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":34,
+ "nextobjectid":35,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.1",
