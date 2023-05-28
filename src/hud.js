@@ -30,7 +30,7 @@ export default class Hud extends Phaser.GameObjects.Group {
       this.orderMenuImage = this.scene.add.image(0,0, 'background');
 
       //var orderMenuImage = this.scene.add.image(0,0, 'test');
-      
+
         console.log(this.menuOption);
         this.scene.raidButton = new TextButton(this.scene, 38, 38, 'Go Raiding', {fill: '#000'}, () => this.goRaiding());
         this.scene.add.existing(this.scene.raidButton);
@@ -191,23 +191,19 @@ export default class Hud extends Phaser.GameObjects.Group {
         this.hideButtons('Army');
         this.hideText();
       } else if (this.menuOption == 4){
-        this.visible = false;
         this.hideButtons('Order');
         this.showButtons('Army');
         //this.scene.add.image(0,0,'test').setOrigin(0,0);
         this.showText();
       } else if (this.menuOption == 2){
-        this.visible = false;
         this.hideButtons('Order');
         this.hideButtons('Army');
         this.scene.add.text(38,68,'Pick A territory to claim', {fill: '#000'});
       } else if (this.menuOption == 1){
-        this.visible = false;
         this.hideButtons('Order');
         this.hideButtons('Army');
         this.scene.add.text(38,68,'Get That Gold BOiiiii', {fill: '#000'});
       } else if (this.menuOption == 3){
-        this.visible = false;
         this.hideButtons('Order');
         this.hideButtons('Army');
         this.scene.add.text(38,68,'let that Castle feel that heat', {fill: '#000'});
