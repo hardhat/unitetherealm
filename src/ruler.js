@@ -26,6 +26,14 @@ export default class Ruler extends Phaser.GameObjects.Group {
 
     }
 	
+	might() {
+		const s=this.army['soldier'];
+		const k=this.army['knight'];
+		const m=this.army['mage'];
+		
+		return s+k*10+m*24;
+	}
+	
 	cost(sol,kni,mag) {
 		return sol+kni*8+mag*22;
 	}

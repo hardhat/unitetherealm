@@ -26,6 +26,14 @@ export default class Province extends Phaser.GameObjects.Group {
     {
 
     }
+		
+	might() {
+		const s=this.army['soldier'];
+		const k=this.army['knight'];
+		const m=this.army['mage'];
+		
+		return s+k*10+m*24;
+	}
 	
 	newRuler(ruler) {
 		this.owner = ruler.name;
