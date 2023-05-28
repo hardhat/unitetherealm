@@ -37,7 +37,6 @@ export default class Hud extends Phaser.GameObjects.Group {
     }
     update ()
     {
-        this.updateHealth();
         this.updateScore();
     }
 
@@ -47,7 +46,6 @@ export default class Hud extends Phaser.GameObjects.Group {
         text.setShadow(2,2,'#333333',2,true,true);
         return text;
     }
-
     updateScore(amount)
     {
         this.score += amount;
