@@ -183,7 +183,7 @@ export default class Bout extends Phaser.Scene {
 
 				  console.log(object.name+' '+"hasCastle:" + castle + ", ruler:" + ruler + ', faction:' + faction);
 				  
-				  const prov = new Province( {scene: this, x: spawnX, y: spawnY, name:object.name, hint:hint, poly:[], hasCastle:castle });
+				  const prov = new Province( {scene: this, x: spawnX, y: spawnY, name:object.name, faction:faction, hint:hint, poly:[], hasCastle:castle });
 				  if(ruler) {
 					  const rulerObj = new Ruler({scene: this, name: ruler, faction: faction,homeProv:prov,id:0,isPlayer:false});
 					  this.ruler.push(rulerObj);

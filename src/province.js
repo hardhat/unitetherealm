@@ -1,5 +1,5 @@
 export default class Province extends Phaser.GameObjects.Group {
-    constructor ({scene,x,y,name,hint,poly,hasCastle}) {
+    constructor ({scene,x,y,name,faction,hint,poly,hasCastle}) {
         super(scene);
 
         this.scene=scene;
@@ -16,7 +16,7 @@ export default class Province extends Phaser.GameObjects.Group {
 		
 		this.label = this.addFancyText(x,y);
         this.scene.provText.push(this.label);
-        this.label.text=hasCastle?'Castle':'Prov';
+        this.label.text=(hasCastle?'🏰':'🏠')+'-'+(faction=='red'?'🔺':faction=='blue'?'🔹':'⬜️');
         
 		//this.scene.container.add(this.label);	// In UI layer.
     }
@@ -66,6 +66,7 @@ export default class Province extends Phaser.GameObjects.Group {
 		this.owner = ruler.name;
 		this.faction = ruler.faction;
 		this.army = {'soldier':0, 'knight':0, 'mage':0};
+        this.label.text=(this.hasCastle?'🏰':'🏠')+'-'+(this.faction=='red'?'🔺':this.faction=='blue'?'🔹':'⬜️');
 	}
 
 	nextMonth() {
