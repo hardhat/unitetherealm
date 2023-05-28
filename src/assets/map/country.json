@@ -67,24 +67,6 @@
                 }, 
                 {
                  "height":0,
-                 "id":2,
-                 "name":"cap3",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"hasCastle",
-                         "type":"bool",
-                         "value":false
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":513.333,
-                 "y":95.3333
-                }, 
-                {
-                 "height":0,
                  "id":3,
                  "name":"cap4",
                  "point":true,
@@ -195,88 +177,6 @@
                 }, 
                 {
                  "height":0,
-                 "id":8,
-                 "name":"cap9",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"hasCastle",
-                         "type":"bool",
-                         "value":false
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":381.333,
-                 "y":293
-                }, 
-                {
-                 "height":0,
-                 "id":9,
-                 "name":"cap11",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"hasCastle",
-                         "type":"bool",
-                         "value":false
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":445,
-                 "y":369.333
-                }, 
-                {
-                 "height":0,
-                 "id":10,
-                 "name":"cap12",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"hasCastle",
-                         "type":"bool",
-                         "value":false
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":331.667,
-                 "y":402.333
-                }, 
-                {
-                 "height":0,
-                 "id":11,
-                 "name":"cap13",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"faction",
-                         "type":"string",
-                         "value":"blue"
-                        }, 
-                        {
-                         "name":"hasCastle",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"ruler",
-                         "type":"string",
-                         "value":"Wilfred the Kind"
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":363.333,
-                 "y":447
-                }, 
-                {
-                 "height":0,
                  "id":12,
                  "name":"cap14",
                  "point":true,
@@ -323,24 +223,6 @@
                 }, 
                 {
                  "height":0,
-                 "id":14,
-                 "name":"cap17",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"hasCastle",
-                         "type":"bool",
-                         "value":false
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":543.333,
-                 "y":480
-                }, 
-                {
-                 "height":0,
                  "id":15,
                  "name":"cap10",
                  "point":true,
@@ -369,42 +251,6 @@
                 }, 
                 {
                  "height":0,
-                 "id":16,
-                 "name":"cap15",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"hasCastle",
-                         "type":"bool",
-                         "value":false
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":592.667,
-                 "y":438.667
-                }, 
-                {
-                 "height":0,
-                 "id":17,
-                 "name":"cap18",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"hasCastle",
-                         "type":"bool",
-                         "value":false
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":532,
-                 "y":550.333
-                }, 
-                {
-                 "height":0,
                  "id":18,
                  "name":"cap2",
                  "point":true,
@@ -420,10 +266,182 @@
                  "width":0,
                  "x":480,
                  "y":122
+                }, 
+                {
+                 "height":0,
+                 "id":24,
+                 "name":"cap12",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":false
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":227.666666666667,
+                 "y":382.333333333333
+                }, 
+                {
+                 "height":0,
+                 "id":25,
+                 "name":"cap13",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"faction",
+                         "type":"string",
+                         "value":"blue"
+                        }, 
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"ruler",
+                         "type":"string",
+                         "value":"Wilfred the Kind"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":186.666666666667,
+                 "y":488
+                }, 
+                {
+                 "height":0,
+                 "id":26,
+                 "name":"cap9",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":false
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":280,
+                 "y":295.333333333333
+                }, 
+                {
+                 "height":0,
+                 "id":27,
+                 "name":"cap3",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":false
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":703.333333333333,
+                 "y":103
+                }, 
+                {
+                 "height":0,
+                 "id":28,
+                 "name":"cap17",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":false
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":323,
+                 "y":443
+                }, 
+                {
+                 "height":0,
+                 "id":29,
+                 "name":"cap17",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":false
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":323,
+                 "y":443
+                }, 
+                {
+                 "height":0,
+                 "id":31,
+                 "name":"cap18",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":false
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":555.666666666667,
+                 "y":525.333333333333
+                }, 
+                {
+                 "height":0,
+                 "id":32,
+                 "name":"cap15",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":false
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":575.333333333333,
+                 "y":458.666666666667
+                }, 
+                {
+                 "height":0,
+                 "id":33,
+                 "name":"cap11",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":false
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":378.666666666667,
+                 "y":319.333333333333
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }, 
@@ -519,7 +537,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":24,
+ "nextobjectid":34,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.1",

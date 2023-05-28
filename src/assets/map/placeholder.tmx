@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="24">
+<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="34">
  <editorsettings>
   <export target="country.json" format="json"/>
  </editorsettings>
@@ -27,18 +27,12 @@
 2,3,4,1,2,3,4,2,3,4,1,1,5,43,43,43,43,43,38,4,2,3,4,4,4
 </data>
  </layer>
- <objectgroup id="2" name="capitals" visible="0">
+ <objectgroup id="2" name="capitals">
   <object id="1" name="cap1" x="418.333" y="68">
    <properties>
     <property name="faction" value="red"/>
     <property name="hasCastle" type="bool" value="true"/>
     <property name="ruler" value="Brad the Bold"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="2" name="cap3" x="513.333" y="95.3333">
-   <properties>
-    <property name="hasCastle" type="bool" value="false"/>
    </properties>
    <point/>
   </object>
@@ -76,32 +70,6 @@
    </properties>
    <point/>
   </object>
-  <object id="8" name="cap9" x="381.333" y="293">
-   <properties>
-    <property name="hasCastle" type="bool" value="false"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="9" name="cap11" x="445" y="369.333">
-   <properties>
-    <property name="hasCastle" type="bool" value="false"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="10" name="cap12" x="331.667" y="402.333">
-   <properties>
-    <property name="hasCastle" type="bool" value="false"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="11" name="cap13" x="363.333" y="447">
-   <properties>
-    <property name="faction" value="blue"/>
-    <property name="hasCastle" type="bool" value="true"/>
-    <property name="ruler" value="Wilfred the Kind"/>
-   </properties>
-   <point/>
-  </object>
   <object id="12" name="cap14" x="463" y="431">
    <properties>
     <property name="hasCastle" type="bool" value="false"/>
@@ -116,12 +84,6 @@
    </properties>
    <point/>
   </object>
-  <object id="14" name="cap17" x="543.333" y="480">
-   <properties>
-    <property name="hasCastle" type="bool" value="false"/>
-   </properties>
-   <point/>
-  </object>
   <object id="15" name="cap10" x="523.333" y="333">
    <properties>
     <property name="faction" value="blue"/>
@@ -130,19 +92,63 @@
    </properties>
    <point/>
   </object>
-  <object id="16" name="cap15" x="592.667" y="438.667">
-   <properties>
-    <property name="hasCastle" type="bool" value="false"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="17" name="cap18" x="532" y="550.333">
-   <properties>
-    <property name="hasCastle" type="bool" value="false"/>
-   </properties>
-   <point/>
-  </object>
   <object id="18" name="cap2" x="480" y="122">
+   <properties>
+    <property name="hasCastle" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="24" name="cap12" x="227.667" y="382.333">
+   <properties>
+    <property name="hasCastle" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="25" name="cap13" x="186.667" y="488">
+   <properties>
+    <property name="faction" value="blue"/>
+    <property name="hasCastle" type="bool" value="true"/>
+    <property name="ruler" value="Wilfred the Kind"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="26" name="cap9" x="280" y="295.333">
+   <properties>
+    <property name="hasCastle" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="27" name="cap3" x="703.333" y="103">
+   <properties>
+    <property name="hasCastle" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="28" name="cap17" x="323" y="443">
+   <properties>
+    <property name="hasCastle" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="29" name="cap17" x="323" y="443">
+   <properties>
+    <property name="hasCastle" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="31" name="cap18" x="555.667" y="525.333">
+   <properties>
+    <property name="hasCastle" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="32" name="cap15" x="575.333" y="458.667">
+   <properties>
+    <property name="hasCastle" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="33" name="cap11" x="378.667" y="319.333">
    <properties>
     <property name="hasCastle" type="bool" value="false"/>
    </properties>
