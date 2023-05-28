@@ -41,7 +41,7 @@
    <properties>
     <property name="faction" value="red"/>
     <property name="hasCastle" type="bool" value="true"/>
-    <property name="hint" value="cap1,cap2,cap6,cap7"/>
+    <property name="hint" value="cap1,cap2,cap5,cap8,cap9"/>
     <property name="ruler" value="George the Wise"/>
    </properties>
    <point/>
@@ -49,13 +49,14 @@
   <object id="5" name="cap5" x="546.667" y="195">
    <properties>
     <property name="hasCastle" type="bool" value="false"/>
-    <property name="hint" value="cap2,cap4,cap3,cap7,cap8"/>
+    <property name="hint" value="cap2,cap4,cap3,cap6,cap8,cap10"/>
    </properties>
    <point/>
   </object>
   <object id="12" name="cap14" x="463" y="431">
    <properties>
     <property name="hasCastle" type="bool" value="false"/>
+    <property name="hint" value="cap10,cap15,cap18,cap16,cap17"/>
    </properties>
    <point/>
   </object>
@@ -63,6 +64,7 @@
    <properties>
     <property name="faction" value="blue"/>
     <property name="hasCastle" type="bool" value="true"/>
+    <property name="hint" value="cap6,cap8,cap11,cap14"/>
     <property name="ruler" value="Frank the Strong"/>
    </properties>
    <point/>
@@ -70,13 +72,14 @@
   <object id="18" name="cap2" x="480" y="122">
    <properties>
     <property name="hasCastle" type="bool" value="false"/>
-    <property name="hint" value="cap1,cap4,cap3,cap5"/>
+    <property name="hint" value="cap1,cap4,cap3,cap5,cap8"/>
    </properties>
    <point/>
   </object>
   <object id="24" name="cap12" x="227.667" y="382.333">
    <properties>
     <property name="hasCastle" type="bool" value="false"/>
+    <property name="hint" value="cap7,cap11,cap17,cap13"/>
    </properties>
    <point/>
   </object>
@@ -84,6 +87,7 @@
    <properties>
     <property name="faction" value="blue"/>
     <property name="hasCastle" type="bool" value="true"/>
+    <property name="hint" value="cap12,cap17"/>
     <property name="ruler" value="Wilfred the Kind"/>
    </properties>
    <point/>
@@ -91,7 +95,7 @@
   <object id="27" name="cap3" x="703.333" y="103">
    <properties>
     <property name="hasCastle" type="bool" value="false"/>
-    <property name="hint" value="cap1,cap2,cap5"/>
+    <property name="hint" value="cap1,cap2,cap5,cap8"/>
    </properties>
    <point/>
   </object>
@@ -104,24 +108,28 @@
   <object id="29" name="cap17" x="323" y="443">
    <properties>
     <property name="hasCastle" type="bool" value="false"/>
+    <property name="hint" value="cap12,cap13,cap14"/>
    </properties>
    <point/>
   </object>
   <object id="31" name="cap18" x="555.667" y="525.333">
    <properties>
     <property name="hasCastle" type="bool" value="false"/>
+    <property name="hint" value="cap15,cap16,cap14"/>
    </properties>
    <point/>
   </object>
   <object id="32" name="cap15" x="575.333" y="458.667">
    <properties>
     <property name="hasCastle" type="bool" value="false"/>
+    <property name="hint" value="cap14,cap18,cap16"/>
    </properties>
    <point/>
   </object>
   <object id="33" name="cap11" x="378.667" y="319.333">
    <properties>
     <property name="hasCastle" type="bool" value="false"/>
+    <property name="hint" value="cap10,cap8,cap4,cap9,cap7,cap12,"/>
    </properties>
    <point/>
   </object>
@@ -129,6 +137,7 @@
    <properties>
     <property name="faction" value="blue"/>
     <property name="hasCastle" type="bool" value="true"/>
+    <property name="hint" value="cap14,cap18,cap15"/>
     <property name="ruler" value="Stephen the Warrior"/>
    </properties>
    <point/>
@@ -136,6 +145,7 @@
   <object id="38" name="cap9" x="350" y="229.667">
    <properties>
     <property name="hasCastle" type="bool" value="false"/>
+    <property name="hint" value="cap4,cap8,cap11,cap7"/>
    </properties>
    <point/>
   </object>
@@ -143,6 +153,7 @@
    <properties>
     <property name="faction" value="red"/>
     <property name="hasCastle" type="bool" value="true"/>
+    <property name="hint" value="cap9,cap11,cap12,cap17"/>
     <property name="ruler" value="Alfred the Swift"/>
    </properties>
    <point/>
@@ -150,13 +161,14 @@
   <object id="41" name="cap8" x="471" y="242.667">
    <properties>
     <property name="hasCastle" type="bool" value="false"/>
+    <property name="hint" value="cap2,cap4,cap5,cap6,cap10,cap11,cap9"/>
    </properties>
    <point/>
   </object>
   <object id="42" name="cap6" x="591.667" y="271.333">
    <properties>
     <property name="hasCastle" type="bool" value="false"/>
-    <property name="hint" value="cap4,cap7,cap11,cap9"/>
+    <property name="hint" value="cap3,cap5,cap8,cap10"/>
    </properties>
    <point/>
   </object>

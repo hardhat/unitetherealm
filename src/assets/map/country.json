@@ -89,7 +89,7 @@
                         {
                          "name":"hint",
                          "type":"string",
-                         "value":"cap1,cap2,cap6,cap7"
+                         "value":"cap1,cap2,cap5,cap8,cap9"
                         }, 
                         {
                          "name":"ruler",
@@ -117,7 +117,7 @@
                         {
                          "name":"hint",
                          "type":"string",
-                         "value":"cap2,cap4,cap3,cap7,cap8"
+                         "value":"cap2,cap4,cap3,cap6,cap8,cap10"
                         }],
                  "rotation":0,
                  "type":"",
@@ -136,6 +136,11 @@
                          "name":"hasCastle",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"hint",
+                         "type":"string",
+                         "value":"cap10,cap15,cap18,cap16,cap17"
                         }],
                  "rotation":0,
                  "type":"",
@@ -159,6 +164,11 @@
                          "name":"hasCastle",
                          "type":"bool",
                          "value":true
+                        }, 
+                        {
+                         "name":"hint",
+                         "type":"string",
+                         "value":"cap6,cap8,cap11,cap14"
                         }, 
                         {
                          "name":"ruler",
@@ -186,7 +196,7 @@
                         {
                          "name":"hint",
                          "type":"string",
-                         "value":"cap1,cap4,cap3,cap5"
+                         "value":"cap1,cap4,cap3,cap5,cap8"
                         }],
                  "rotation":0,
                  "type":"",
@@ -205,13 +215,18 @@
                          "name":"hasCastle",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"hint",
+                         "type":"string",
+                         "value":"cap7,cap11,cap17,cap13"
                         }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":227.666666666667,
-                 "y":382.333333333333
+                 "x":227.667,
+                 "y":382.333
                 }, 
                 {
                  "height":0,
@@ -230,6 +245,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"hint",
+                         "type":"string",
+                         "value":"cap12,cap17"
+                        }, 
+                        {
                          "name":"ruler",
                          "type":"string",
                          "value":"Wilfred the Kind"
@@ -238,7 +258,7 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":186.666666666667,
+                 "x":186.667,
                  "y":488
                 }, 
                 {
@@ -255,13 +275,13 @@
                         {
                          "name":"hint",
                          "type":"string",
-                         "value":"cap1,cap2,cap5"
+                         "value":"cap1,cap2,cap5,cap8"
                         }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":703.333333333333,
+                 "x":703.333,
                  "y":103
                 }, 
                 {
@@ -292,6 +312,11 @@
                          "name":"hasCastle",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"hint",
+                         "type":"string",
+                         "value":"cap12,cap13,cap14"
                         }],
                  "rotation":0,
                  "type":"",
@@ -310,13 +335,18 @@
                          "name":"hasCastle",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"hint",
+                         "type":"string",
+                         "value":"cap15,cap16,cap14"
                         }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":555.666666666667,
-                 "y":525.333333333333
+                 "x":555.667,
+                 "y":525.333
                 }, 
                 {
                  "height":0,
@@ -328,13 +358,18 @@
                          "name":"hasCastle",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"hint",
+                         "type":"string",
+                         "value":"cap14,cap18,cap16"
                         }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":575.333333333333,
-                 "y":458.666666666667
+                 "x":575.333,
+                 "y":458.667
                 }, 
                 {
                  "height":0,
@@ -346,13 +381,18 @@
                          "name":"hasCastle",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"hint",
+                         "type":"string",
+                         "value":"cap10,cap8,cap4,cap9,cap7,cap12,"
                         }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":378.666666666667,
-                 "y":319.333333333333
+                 "x":378.667,
+                 "y":319.333
                 }, 
                 {
                  "height":0,
@@ -371,6 +411,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"hint",
+                         "type":"string",
+                         "value":"cap14,cap18,cap15"
+                        }, 
+                        {
                          "name":"ruler",
                          "type":"string",
                          "value":"Stephen the Warrior"
@@ -379,8 +424,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":440.333333333333,
-                 "y":538.333333333333
+                 "x":440.333,
+                 "y":538.333
                 }, 
                 {
                  "height":0,
@@ -392,13 +437,18 @@
                          "name":"hasCastle",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"hint",
+                         "type":"string",
+                         "value":"cap4,cap8,cap11,cap7"
                         }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":0,
                  "x":350,
-                 "y":229.666666666667
+                 "y":229.667
                 }, 
                 {
                  "height":0,
@@ -417,6 +467,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"hint",
+                         "type":"string",
+                         "value":"cap9,cap11,cap12,cap17"
+                        }, 
+                        {
                          "name":"ruler",
                          "type":"string",
                          "value":"Alfred the Swift"
@@ -425,7 +480,7 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":285.666666666667,
+                 "x":285.667,
                  "y":273
                 }, 
                 {
@@ -438,13 +493,18 @@
                          "name":"hasCastle",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"hint",
+                         "type":"string",
+                         "value":"cap2,cap4,cap5,cap6,cap10,cap11,cap9"
                         }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":0,
                  "x":471,
-                 "y":242.666666666667
+                 "y":242.667
                 }, 
                 {
                  "height":0,
@@ -460,14 +520,14 @@
                         {
                          "name":"hint",
                          "type":"string",
-                         "value":"cap4,cap7,cap11,cap9"
+                         "value":"cap3,cap5,cap8,cap10"
                         }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":591.666666666667,
-                 "y":271.333333333333
+                 "x":591.667,
+                 "y":271.333
                 }],
          "opacity":1,
          "type":"objectgroup",
