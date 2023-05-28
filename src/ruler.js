@@ -141,11 +141,20 @@ export default class Ruler extends Phaser.GameObjects.Group {
 		
 		if(f>t) {
 			to.army['soldier']-=6;
-			if(to.arm['soldier']<0) {
-				to['knights']--;
-				if(to.mage) {
-					
+			if(to.army['soldier']<0) {
+				to.army['knights']--;
+				if(to.army['soldier']<0) {
+					to.army['amge']--;
 				}
+			}
+			if(to.army['soldier']<0) {
+				to.army['soldier']=0;
+			}
+			if(to.army['knight']<0) {
+				to.army['knight']=0;
+			}
+			if(to.army['mage']<0) {
+				to.army['mage']=0;
 			}
 		}
 	}
