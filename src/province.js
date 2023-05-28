@@ -36,7 +36,7 @@ export default class Province extends Phaser.GameObjects.Group {
 						break;
 				}
 			}
-			if(k==this.scene.prov.length) console.log('bad adjacent province:'+list[i]);
+			if(k==this.scene.prov.length) console.log('bad adjacent province:'+list[i]+","+k);
 		}
 		
 		console.log('prov '+this.name+' has '+count+' neighbours');
@@ -69,7 +69,7 @@ export default class Province extends Phaser.GameObjects.Group {
 			else if(type=='enemy' && prov.ruler!=this.ruler && !prov.hasCastle) return [prov];
 			
 			// try deeper if on a safe square
-			if{prov.ruler==this.ruler) {
+			if(prov.ruler==this.ruler) {
 				const list=prov.searchFor(type,maxDepth-1);
 				if(list==null) cotinue;
 				if(list.length+1<result.length) {
