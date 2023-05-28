@@ -2,79 +2,78 @@
 
 // Heads up display shows the status of each character.  What is their health meter?  What is their power up energy for a special move?
 import TextButton from './game-objects/TextButton.js'
-
+var ordorMenu = true;
 export default class Hud extends Phaser.GameObjects.Group {
     constructor ({scene}) {
         super(scene);
-
         this.scene=scene;
-
-
-        //this.bg = this.scene.add.image(0,0,'hudBg').setOrigin(0, 0);
-        this.width = 800;
-
-        //this.healthbar = scene.add.sprite(2,2,'healthbar').setOrigin(0, 0);
-
-        this.score = 0;
-        //this.score.pts = int;
-        //this.score.pts = 0;
-        this.scoreLabel = 'Score: ';
-        this.scene.hudText = [
-			this.addFancyText(150,30),
-			this.addFancyText(500,30),
-			this.addFancyText(150,5),
-			this.addFancyText(500,5)
-		];
-        this.scene.hudText[2].text='Player: ';
-        this.scene.hudText[3].text='Enemy: ';
-		this.scene.container.add(this.scene.hudText);	// In UI layer.
+        this.ordorMenu = ordorMenu;
     }
     preload(){
       this.scene.load.image('Order_Menu','assets/gamemenus/Orders_Menu.png');
+      this.scene.load.image('Build_YourArmy','assets/gamemenus/Build_YourArmy.png');
+      this.scene.load.image('test','assets/gamemenus/test.png');
     }
     create(){
-      this.scene.add.image(0,0, 'Order_Menu').setOrigin(0,0);
       this.clickCount = 0;
+      this.normalButtonList = []; //creates list for buttons
+      //var orderMenuImage = this.scene.add.image(0,0, 'Order_Menu');
+      var orderMenuImage = this.scene.add.image(0,0, 'test');
+      this.orderMenuImage = orderMenuImage;
+        console.log(this.ordorMenu);
+        this.scene.raidButton = new TextButton(this.scene, 38, 38, 'Go Raiding', {fill: '#000'}, () => this.updateClickCountText());
+        this.scene.add.existing(this.scene.raidButton);
+        this.normalButtonList.push(this.scene.raidButton);
 
-      this.scene.raidButton = new TextButton(this.scene, 38, 38, 'Go Raiding', {fill: '#000'}, () => this.updateClickCountText());
-      this.scene.add.existing(this.scene.raidButton);
+        this.scene.growButton = new TextButton(this.scene, 38, 68, 'Grow Your Territory', {fill: '#000'}, () => this.updateClickCountText());
+        this.scene.add.existing(this.scene.growButton);
+        this.normalButtonList.push(this.scene.growButton);
 
-      this.scene.growButton = new TextButton(this.scene, 38, 68, 'Grow Your Territory', {fill: '#000'}, () => this.updateClickCountText());
-      this.scene.add.existing(this.scene.growButton);
+        this.scene.stormButton = new TextButton(this.scene, 38, 98, 'Storm The Castle', {fill: '#000'}, () => this.updateClickCountText());
+        this.scene.add.existing(this.scene.stormButton);
+        this.normalButtonList.push(this.scene.stormButton);
 
-      this.scene.stormButton = new TextButton(this.scene, 38, 98, 'Storm The Castle', {fill: '#000'}, () => this.updateClickCountText());
-      this.scene.add.existing(this.scene.stormButton);
+        this.scene.armyButton = new TextButton(this.scene, 38, 128, 'Build Your Army', {fill: '#000'}, () => this.buildYourArmy());
+        this.scene.add.existing(this.scene.armyButton);
+        this.normalButtonList.push(this.scene.armyButton);
+        //this.scene.add.image(0,0, 'Order_Menu').setOrigin(0,0);
+    }
+    hideNormalButtons() { /* hides and deactivates normal buttons */
+        this.normalButtonList.forEach(button => {
+            /*this.syllable3.play();*/
+            button.setVisible(false);
+            //button.input.enabled = false;
+        });
+    }
 
-      this.scene.armyButton = new TextButton(this.scene, 38, 128, 'Build Your Army', {fill: '#000'}, () => this.updateClickCountText());
-      this.scene.add.existing(this.scene.armyButton);
-
-      /*this.scene.raidButton = this.scene.add.text(38,38,'Go Raiding',{fill: '#000'})
-      .setInteractive()
-      .on('pointerover', () => this.enterButtonHoverState())
-      .on('pointerout', () => this.enterButtonRestState())
-      .on('pointerdown', () => this.enterButtonActiveState())
-      .on('pointerup', () => {
-        ++clickCount;
-        this.enterButtonHoverState();
-      });
-      console.log(clickCount);*/
+    showNormalButtons() { /* resets normal buttons */
+        this.normalButtonList.forEach(button => {
+            button.setVisible(true);
+            //button.input.enabled = true;
+        });
     }
     updateClickCountText(){
       console.log(this.clickCount);
       this.clickCount++;
     }
-    enterButtonHoverState() {
-      this.scene.raidButton.setStyle({ fill: '#999'});
+    buildYourArmy(){
+      //this.scene.add.image(0,0,'Build_Your_Army').setOrigin(0,0);
+      this.ordorMenu = false;
+      console.log(this.ordorMenu);
     }
-    enterButtonRestState() {
-      this.scene.raidButton.setStyle({ fill: '#000' });
+    drawMenus(){
+      if(this.ordorMenu){
+        this.orderMenuImage.setOrigin(0,0);
+        this.showNormalButtons();
+      } else {
+        this.orderMenuImage.setVisible(false);
+        this.hideNormalButtons();
+        this.scene.add.image(0,0,'test').setOrigin(0,0);
+      }
     }
-    enterButtonActiveState() {
-      this.scene.raidButton.setStyle({ fill: '#8323de' });
-    }
-
     update ()
     {
+        this.drawMenus();
         this.updateScore();
     }
 
