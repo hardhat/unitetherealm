@@ -13,13 +13,14 @@ The king is dead.  Become the next soverign through wit and old fashioned force.
 
 ## Build an army:
 
-- soldiers
-- knights
-- mages
+- soldiers cost 1
+- knights cost 8
+- mages cost 20
 
 ## Collect Taxes:
 
-- teritories based income
+- teritories based income 
+	each territory generates 12 coins per month plus 3*the number of territories you control bonus
 
 ## Go raiding:
 
@@ -28,10 +29,13 @@ The king is dead.  Become the next soverign through wit and old fashioned force.
 ## Be robbed:
 
 - stolen taxes, sabotaged equipment
+   lose half your income for the month
 
 ##Storm the castle:
+	mages attack castle wall to breech castle 8 fireballs
 
 ##Grow your teritory:
+Send your army to new lands, meet new people, kill them
 
 ## Battle other factions:
 

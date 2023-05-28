@@ -1,6 +1,7 @@
 // Game level goes here.
 //import Phaser from 'phaser'
 import Hud from './hud.js'
+import Province from './province.js'
 
 // Shows level background.  Stretch goal: scroll side to side
 var destination = new Phaser.Geom.Point(15,9);
@@ -114,9 +115,11 @@ export default class Bout extends Phaser.Scene {
 
 
     buildMap(){
-      var scene = this
+      var scene = this;
       const data = scene.cache.json.get('country');
       var map = this.add.tilemap('country');
+	  this.prov = Array();
+	  this.provText = Array();
       console.log(map);
 
       const tilewidth = data.tilewidth;
@@ -128,13 +131,19 @@ export default class Bout extends Phaser.Scene {
       for(let j = 0; j < data.layers.length; j++){
         console.log(j);
         if(data.layers[j].type == "objectgroup"){
-          var spawnX = data.layers[j].objects[0].x;
-          var spawnY = data.layers[j].objects[0].y;
-          const object = data.layers[j].data;
-          console.log("it worked");
-          console.log(data.layers[j].objects[0].x);
-          console.log(data.layers[j].objects[0].y);
-          return {x: spawnX, y: spawnY};
+		  // find poly and anchor
+		  for(let i = 0; i < data.layers[j].objects.length; i++) {
+			  var spawnX = data.layers[j].objects[i].x;
+			  var spawnY = data.layers[j].objects[i].y;
+			  const object = data.layers[j].objects[i];
+			  if(object.name.startsWith('cap')) {
+				  console.log("province:"+object.name);
+				  console.log(data.layers[j].objects[i].x);
+				  console.log(data.layers[j].objects[i].y);
+				  
+				  this.prov.push(new Province( {scene: this, x: spawnX, y: spawnY, poly:[], hasCastle:false }));
+			  }
+		  }
         }
 		if(data.layers[j].type != "tilelayer") {
 			continue;
