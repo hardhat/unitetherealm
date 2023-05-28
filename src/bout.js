@@ -149,8 +149,8 @@ export default class Bout extends Phaser.Scene {
 		this.mapacross=mapwidth;
 		this.mapdown=mapheight;
 
-        const centerX = 0;//mapwidth * tileWidthHalf;
-        const centerY = 0;//16;
+        const centerX = tilewidth/2;//mapwidth * tileWidthHalf;
+        const centerY = tileheight/2;//16;
 
 		this.centerX = centerX;
 		this.centerY = centerY;
