@@ -8,6 +8,7 @@ export default class Province extends Phaser.GameObjects.Group {
 		this.y=y;
 		this.name = name;
 		this.owner = 'unaligned';
+		this.ruler = null;
 		this.faction = 'none';
 		this.hasCastle = hasCastle;
 		this.army = {'soldier':0, 'knight':0, 'mage':0};
@@ -62,11 +63,22 @@ export default class Province extends Phaser.GameObjects.Group {
 		return s+k*10+m*24;
 	}
 	
+	updateIcon() {
+		const ruler=this.ruler;
+		
+        this.label.text=(this.hasCastle?'🏰':'🏠')+'-'+
+			(ruler?ruler.id:'')+
+			(this.faction=='red'?'🔺':this.faction=='blue'?'🔹':'⬜️')+
+			(ruler && ruler.armyPos==this ?'⚔️':'');
+		
+	}
+	
 	newRuler(ruler) {
 		this.owner = ruler.name;
+		this.ruler = ruler;
 		this.faction = ruler.faction;
 		this.army = {'soldier':0, 'knight':0, 'mage':0};
-        this.label.text=(this.hasCastle?'🏰':'🏠')+'-'+ruler.id+(this.faction=='red'?'🔺':this.faction=='blue'?'🔹':'⬜️');
+		this.updateIcon();
 	}
 
 	nextMonth() {
