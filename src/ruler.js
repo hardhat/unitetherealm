@@ -41,11 +41,32 @@ export default class Ruler extends Phaser.GameObjects.Group {
 	findTarget() {
 		var tar=null;
 		
+		if(this.might()==0) return null;
+		if(this.armyPos==null) return null;
+		var path = this.armyPos.searchFor('empty',7);
+		if(!path) path = this.faction=='red'?this.armyPos.searchFor('blue',4):this.army.searchFor('red',4);
+		if(!path) path = this.armyPos.searchFor('stronghold',6);
+		if(!path) path = this.armyPos.searchFor('enemy',6);
+		
+		if(path) tar=path.pop();
 		return tar;
 	}
 	
 	moveToCastle() {
+		if(this.might()==0) {
+			this.armyPos=this.homeProv;
+			return;
+		}
 		
+		if(this.armyPos==null) return;
+		
+		const path=this.armyPos.searchFor('home',5);
+		
+		if(path==null) return;
+		
+		const home=path.pop();
+		
+		this.armyPos=home;
 	}
 	
 	planActions() {

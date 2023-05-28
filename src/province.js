@@ -54,6 +54,33 @@ export default class Province extends Phaser.GameObjects.Group {
 	adjacent() {
 		return this.adjacentProv;
 	}
+	
+	searchFor(type,maxDepth) {
+		var result=null;
+		
+		if(maxDepth<=0) return null;
+		for(let i=0;i<this.adjacentProv;i++) {
+			const prov=this.adjacentProv[i];
+			if(type=='empty' && prov.ruler==null) return [prov];
+			else if(type=='red' && prov.faction=='red') return [prov];
+			else if(type=='blue' && prov.faction=='blue') return [prov];
+			else if(type=='home' && prov.ruler==this.ruler && prov.hasCastle) return [prov];
+			else if(type=='stronghold' && prov.ruler!=this.ruler && prov.hasCastle) return [prov];
+			else if(type=='enemy' && prov.ruler!=this.ruler && !prov.hasCastle) return [prov];
+			
+			// try deeper if on a safe square
+			if{prov.ruler==this.ruler) {
+				const list=prov.searchFor(type,maxDepth-1);
+				if(list==null) cotinue;
+				if(list.length+1<result.length) {
+					result = [prov];
+					result.push(list);
+					result = result.flat();
+				}
+			}
+		}
+		return result;
+	}
 		
 	might() {
 		const s=this.army['soldier'];
