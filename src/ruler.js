@@ -8,6 +8,7 @@ export default class Ruler extends Phaser.GameObjects.Group {
 		this.id = id;
 		this.faction = faction;
 		this.homeProv = homeProv;
+		this.armyPos = homeProv;
 		this.isPlayer = isPlayer;
 		this.holdings = [homeProv];
 		this.gold = 12;
@@ -91,15 +92,15 @@ export default class Ruler extends Phaser.GameObjects.Group {
 			tar = this.findTarget();
 			if(!tar) return;
 			if( tar.owner == this.name) {
-				actions.push( (step:'move',target:tar);
+			actions.push( {step:'move',target:tar});
 			} else if(tar.hasCastle == false) {
-				actions.push( (step:'attack',target:tar);
+				actions.push( {step:'attack',target:tar});
 				return;
-			} else if{tar.might()>this.might()*1.2) {
-				actions.push( {step:'raid',target:tar);
+			} else if(tar.might()>this.might()*1.2) {
+				actions.push( {step:'raid',target:tar});
 				return;
 			} else {
-				actions.push( {step:'seige',target:tar);
+				actions.push( {step:'seige',target:tar});
 				return;
 			}
 		}
