@@ -66,7 +66,7 @@ export default class Province extends Phaser.GameObjects.Group {
 		this.owner = ruler.name;
 		this.faction = ruler.faction;
 		this.army = {'soldier':0, 'knight':0, 'mage':0};
-        this.label.text=(this.hasCastle?'🏰':'🏠')+'-'+(this.faction=='red'?'🔺':this.faction=='blue'?'🔹':'⬜️');
+        this.label.text=(this.hasCastle?'🏰':'🏠')+'-'+ruler.id+(this.faction=='red'?'🔺':this.faction=='blue'?'🔹':'⬜️');
 	}
 
 	nextMonth() {

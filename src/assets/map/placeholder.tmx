@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="38">
+<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="43">
  <editorsettings>
   <export target="country.json" format="json"/>
  </editorsettings>
@@ -53,12 +53,6 @@
    </properties>
    <point/>
   </object>
-  <object id="6" name="cap8" x="577.667" y="290.333">
-   <properties>
-    <property name="hasCastle" type="bool" value="false"/>
-   </properties>
-   <point/>
-  </object>
   <object id="12" name="cap14" x="463" y="431">
    <properties>
     <property name="hasCastle" type="bool" value="false"/>
@@ -91,12 +85,6 @@
     <property name="faction" value="blue"/>
     <property name="hasCastle" type="bool" value="true"/>
     <property name="ruler" value="Wilfred the Kind"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="26" name="cap9" x="280" y="295.333">
-   <properties>
-    <property name="hasCastle" type="bool" value="false"/>
    </properties>
    <point/>
   </object>
@@ -145,18 +133,30 @@
    </properties>
    <point/>
   </object>
-  <object id="36" name="cap6" x="478.333" y="237.333">
+  <object id="38" name="cap9" x="350" y="229.667">
    <properties>
     <property name="hasCastle" type="bool" value="false"/>
-    <property name="hint" value="cap4,cap7,cap11,cap9"/>
    </properties>
    <point/>
   </object>
-  <object id="37" name="cap7" x="347" y="216.333">
+  <object id="39" name="cap7" x="285.667" y="273">
    <properties>
     <property name="faction" value="red"/>
     <property name="hasCastle" type="bool" value="true"/>
     <property name="ruler" value="Alfred the Swift"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="41" name="cap8" x="471" y="242.667">
+   <properties>
+    <property name="hasCastle" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="42" name="cap6" x="591.667" y="271.333">
+   <properties>
+    <property name="hasCastle" type="bool" value="false"/>
+    <property name="hint" value="cap4,cap7,cap11,cap9"/>
    </properties>
    <point/>
   </object>

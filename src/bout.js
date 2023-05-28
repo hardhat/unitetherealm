@@ -142,6 +142,8 @@ export default class Bout extends Phaser.Scene {
 	  this.provText = Array();
 	  this.ruler = Array();
       console.log(map);
+	  const rulerId = ['🔴','🟠','🟡','🟢','🔵','🟣'];
+	  let id=0;
 
       const tilewidth = data.tilewidth;
       const tileheight = data.tileheight;
@@ -185,7 +187,8 @@ export default class Bout extends Phaser.Scene {
 				  
 				  const prov = new Province( {scene: this, x: spawnX, y: spawnY, name:object.name, faction:faction, hint:hint, poly:[], hasCastle:castle });
 				  if(ruler) {
-					  const rulerObj = new Ruler({scene: this, name: ruler, faction: faction,homeProv:prov,id:0,isPlayer:false});
+					  const rulerObj = new Ruler({scene: this, name: ruler, faction: faction,homeProv:prov,id:rulerId[id],isPlayer:false});
+					  id++;
 					  this.ruler.push(rulerObj);
 					  prov.newRuler(rulerObj);
 				  }

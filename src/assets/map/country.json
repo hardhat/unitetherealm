@@ -128,24 +128,6 @@
                 }, 
                 {
                  "height":0,
-                 "id":6,
-                 "name":"cap8",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"hasCastle",
-                         "type":"bool",
-                         "value":false
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":577.667,
-                 "y":290.333
-                }, 
-                {
-                 "height":0,
                  "id":12,
                  "name":"cap14",
                  "point":true,
@@ -258,24 +240,6 @@
                  "width":0,
                  "x":186.666666666667,
                  "y":488
-                }, 
-                {
-                 "height":0,
-                 "id":26,
-                 "name":"cap9",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"hasCastle",
-                         "type":"bool",
-                         "value":false
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":280,
-                 "y":295.333333333333
                 }, 
                 {
                  "height":0,
@@ -420,30 +384,25 @@
                 }, 
                 {
                  "height":0,
-                 "id":36,
-                 "name":"cap6",
+                 "id":38,
+                 "name":"cap9",
                  "point":true,
                  "properties":[
                         {
                          "name":"hasCastle",
                          "type":"bool",
                          "value":false
-                        }, 
-                        {
-                         "name":"hint",
-                         "type":"string",
-                         "value":"cap4,cap7,cap11,cap9"
                         }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":478.333333333333,
-                 "y":237.333333333333
+                 "x":350,
+                 "y":229.666666666667
                 }, 
                 {
                  "height":0,
-                 "id":37,
+                 "id":39,
                  "name":"cap7",
                  "point":true,
                  "properties":[
@@ -466,8 +425,49 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":347,
-                 "y":216.333333333333
+                 "x":285.666666666667,
+                 "y":273
+                }, 
+                {
+                 "height":0,
+                 "id":41,
+                 "name":"cap8",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":false
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":471,
+                 "y":242.666666666667
+                }, 
+                {
+                 "height":0,
+                 "id":42,
+                 "name":"cap6",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"hint",
+                         "type":"string",
+                         "value":"cap4,cap7,cap11,cap9"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":591.666666666667,
+                 "y":271.333333333333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -567,7 +567,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":38,
+ "nextobjectid":43,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.1",
