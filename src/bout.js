@@ -18,9 +18,9 @@ export default class Bout extends Phaser.Scene {
 
     preload ()
     {
-        this.load.json('graveyard', 'assets/map/graveyard.json');
-        this.load.tilemapTiledJSON('graveyardTileMap', 'assets/map/graveyard.json');
-        this.load.spritesheet('tiles', 'assets/map/iso-64x64-outside.png', {frameWidth: 64, frameHeight: 64});
+        this.load.json('country', 'assets/map/country.json');
+        this.load.tilemapTiledJSON('countryTileMap', 'assets/map/country.json');
+        this.load.spritesheet('tiles', 'assets/map/terrain_tiles24.png', {frameWidth: 32, frameHeight: 32});
         this.load.image('Order_Menu','assets/gamemenus/Orders_Menu.png');
 
 
@@ -30,8 +30,8 @@ export default class Bout extends Phaser.Scene {
 	*/
 
         this.load.audio('uhh', [ 'assets/sfx/uhh.wav','assets/sfx/uhh.mp3','assets/sfx/uhh.ogg' ]);
-        this.load.audio('maintheme', [ 'assets/sfx/maintheme.ogg','assets/sfx/maintheme.mp3' ]);
-        this.load.audio('dractheme', [ 'assets/sfx/dractheme.ogg','assets/sfx/dractheme.mp3' ]);
+        //this.load.audio('maintheme', [ 'assets/sfx/maintheme.ogg','assets/sfx/maintheme.mp3' ]);
+        //this.load.audio('dractheme', [ 'assets/sfx/dractheme.ogg','assets/sfx/dractheme.mp3' ]);
     }
 
     create ()
@@ -114,20 +114,15 @@ export default class Bout extends Phaser.Scene {
 
 
     buildMap(){
-      /*var scene = this
-      const data = scene.cache.json.get('graveyard');
-      var map = this.add.tilemap('graveyard');
+      var scene = this
+      const data = scene.cache.json.get('country');
+      var map = this.add.tilemap('country');
       console.log(map);
 
       const tilewidth = data.tilewidth;
       const tileheight = data.tileheight;
 	  this.tileHeight = tileheight;
-
-      var tileWidthHalf = tilewidth / 2;
-      var tileHeightHalf = tileheight / 2;
-
-	  this.tileWidthHalf = tileWidthHalf;
-	  this.tileHeightHalf = tileHeightHalf;
+	  this.tileWidth = tilewidth;2
 
       this.layers = [];
       for(let j = 0; j < data.layers.length; j++){
@@ -141,6 +136,10 @@ export default class Bout extends Phaser.Scene {
           console.log(data.layers[j].objects[0].y);
           return {x: spawnX, y: spawnY};
         }
+		if(data.layers[j].type != "tilelayer") {
+			continue;
+		}
+		// Apply tile layer
         const layer = data.layers[j].data;
         this.layers.push(layer);
 
@@ -161,18 +160,18 @@ export default class Bout extends Phaser.Scene {
           for(let x = 0; x < mapwidth; x++){
             const id = layer[i] - 1;
 
-            const tx = (x-y) * tileWidthHalf;
-            const ty = (x+y) * tileHeightHalf;
+            const tx = x * tilewidth;
+            const ty = y * tileheight;
             if(id != -1){
 				const tile = scene.add.image(centerX + tx, centerY + ty, 'tiles', id);
 				this.playfield.add(tile);
 
-				tile.setDepth(centerY + ty);
+				//tile.setDepth(centerY + ty);
             }
             i++;
           }
         }
-      }*/
+      }
     }
 
 
