@@ -1,5 +1,6 @@
 // Game level goes here.
 //import Phaser from 'phaser'
+import TextButton from './game-objects/TextButton.js'
 import Hud from './hud.js'
 import Province from './province.js'
 import Ruler from './ruler.js'
@@ -32,8 +33,8 @@ export default class Bout extends Phaser.Scene {
 	*/
 
         this.load.audio('uhh', [ 'assets/sfx/uhh.wav','assets/sfx/uhh.mp3','assets/sfx/uhh.ogg' ]);
-        //this.load.audio('maintheme', [ 'assets/sfx/maintheme.ogg','assets/sfx/maintheme.mp3' ]);
-        //this.load.audio('dractheme', [ 'assets/sfx/dractheme.ogg','assets/sfx/dractheme.mp3' ]);
+        this.load.audio('maintheme', [ 'assets/sfx/maintheme.ogg','assets/sfx/maintheme.mp3' ]);
+        this.load.audio('dractheme', [ 'assets/sfx/dractheme.ogg','assets/sfx/dractheme.mp3' ]);
     }
 
     create ()
@@ -116,7 +117,7 @@ export default class Bout extends Phaser.Scene {
 
 
     buildMap(){
-      var scene = this;
+      var scene = this
       const data = scene.cache.json.get('country');
       var map = this.add.tilemap('country');
 	  this.prov = Array();
@@ -127,12 +128,19 @@ export default class Bout extends Phaser.Scene {
       const tilewidth = data.tilewidth;
       const tileheight = data.tileheight;
 	  this.tileHeight = tileheight;
-	  this.tileWidth = tilewidth;2
+    this.tileWidth = tilewidth;
+
+      var tileWidthHalf = tilewidth / 2;
+      var tileHeightHalf = tileheight / 2;
+
+	  this.tileWidthHalf = tileWidthHalf;
+	  this.tileHeightHalf = tileHeightHalf;
 
       this.layers = [];
       for(let j = 0; j < data.layers.length; j++){
         console.log(j);
         if(data.layers[j].type == "objectgroup"){
+
 		  // find poly and anchor
 		  for(let i = 0; i < data.layers[j].objects.length; i++) {
 			  var spawnX = data.layers[j].objects[i].x;
@@ -140,19 +148,20 @@ export default class Bout extends Phaser.Scene {
 			  const object = data.layers[j].objects[i];
 			  if(object.name.startsWith('cap')) {
 				  console.log("province:"+object.name);
-				  
+
 				  var castle = false;
 				  var ruler = false;
 				  var faction = false;
-				  
+
 				  for(let k=0; k<object.properties.length; k++) {
 					  const prop = object.properties[k];
-					  
+
 					  if(prop['name'] == 'hasCastle') castle=prop['value'];
 					  if(prop['name'] == 'ruler') ruler=prop['value'];
 					  if(prop['name'] == 'faction') faction=prop['value'];
 					
 				  }
+
 				  console.log("hasCastle:" + castle + ", ruler:" + ruler + ', faction:' + faction);
 				  
 				  const prov = new Province( {scene: this, x: spawnX, y: spawnY, poly:[], hasCastle:castle });
@@ -162,13 +171,15 @@ export default class Bout extends Phaser.Scene {
 					  prov.newRuler(rulerObj);
 				  }
 				  this.prov.push(prov);
+
 			  }
 		  }
+
         }
-		if(data.layers[j].type != "tilelayer") {
-			continue;
-		}
-		// Apply tile layer
+        if(data.layers[j].type != "tilelayer") {
+			       continue;
+		    }
+		    // Apply tile layer
         const layer = data.layers[j].data;
         this.layers.push(layer);
 
@@ -194,8 +205,6 @@ export default class Bout extends Phaser.Scene {
             if(id != -1){
 				const tile = scene.add.image(centerX + tx, centerY + ty, 'tiles', id);
 				this.playfield.add(tile);
-
-				//tile.setDepth(centerY + ty);
             }
             i++;
           }
