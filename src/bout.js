@@ -33,8 +33,8 @@ export default class Bout extends Phaser.Scene {
 	*/
 
         this.load.audio('uhh', [ 'assets/sfx/uhh.wav','assets/sfx/uhh.mp3','assets/sfx/uhh.ogg' ]);
-        //this.load.audio('maintheme', [ 'assets/sfx/maintheme.ogg','assets/sfx/maintheme.mp3' ]);
-        //this.load.audio('dractheme', [ 'assets/sfx/dractheme.ogg','assets/sfx/dractheme.mp3' ]);
+        this.load.audio('maintheme', [ 'assets/sfx/The_Bards_Tale.mp3','assets/sfx/The_Bards_Tale.wav' ]);
+        this.load.audio('battletheme', [ 'assets/sfx/battle.mp3','assets/sfx/battle.wav' ]);
     }
 
     create ()
@@ -75,6 +75,24 @@ export default class Bout extends Phaser.Scene {
     this.hud.create();
 
     /* this.createSounds(); */
+	this.music =  this.sound.add('maintheme', {
+		volume: 0.2,
+		loop: true
+	})
+
+	if (!this.sound.locked)
+	{
+		// already unlocked so play
+		this.music.play()
+	}
+	else
+	{
+		// wait for 'unlocked' to fire and then play
+		this.sound.once(Phaser.Sound.Events.UNLOCKED, () => {
+			this.music.play()
+		})
+	}
+	
     var camX = x;
     var camY = y;
     this.cameras.main.setSize(1600, 1200);

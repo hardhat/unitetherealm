@@ -46,3 +46,5 @@ Send your army to new lands, meet new people, kill them
 
 ### Includes
 CC0 https://opengameart.org/content/top-down-grass-beach-and-water-tileset
+CC0 https://opengameart.org/content/medieval-the-bards-tale
+CC0 https://opengameart.org/content/medieval-battle
