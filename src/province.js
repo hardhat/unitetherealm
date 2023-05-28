@@ -27,11 +27,11 @@ export default class Province extends Phaser.GameObjects.Group {
 
     }
 	
-	newRuler(ruler) (
+	newRuler(ruler) {
 		this.owner = ruler.name;
 		this.faction = ruler.faction;
 		this.army = {'soldier':0, 'knight':0, 'mage':0};
-	)
+	}
 
 	nextMonth() {
 		// Update game state for this province

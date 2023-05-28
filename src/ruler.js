@@ -1,5 +1,5 @@
 export default class Ruler extends Phaser.GameObjects.Group {
-    constructor ({scene,name,id,homeProv,isPlayer}) {
+    constructor ({scene,name,faction,id,homeProv,isPlayer}) {
         super(scene);
 
         this.scene=scene;

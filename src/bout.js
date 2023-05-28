@@ -121,6 +121,7 @@ export default class Bout extends Phaser.Scene {
       var map = this.add.tilemap('country');
 	  this.prov = Array();
 	  this.provText = Array();
+	  this.ruler = Array();
       console.log(map);
 
       const tilewidth = data.tilewidth;
@@ -141,15 +142,26 @@ export default class Bout extends Phaser.Scene {
 				  console.log("province:"+object.name);
 				  
 				  var castle = false;
+				  var ruler = false;
+				  var faction = false;
 				  
 				  for(let k=0; k<object.properties.length; k++) {
 					  const prop = object.properties[k];
 					  
 					  if(prop['name'] == 'hasCastle') castle=prop['value'];
+					  if(prop['name'] == 'ruler') ruler=prop['value'];
+					  if(prop['name'] == 'faction') faction=prop['value'];
+					
 				  }
-				  console.log("hasCastle" + castle);
+				  console.log("hasCastle:" + castle + ", ruler:" + ruler + ', faction:' + faction);
 				  
-				  this.prov.push(new Province( {scene: this, x: spawnX, y: spawnY, poly:[], hasCastle:castle }));
+				  const prov = new Province( {scene: this, x: spawnX, y: spawnY, poly:[], hasCastle:castle });
+				  if(ruler) {
+					  const rulerObj = new Ruler({scene: this, name: ruler, faction: faction,homeProv:prov,id:0,isPlayer:false});
+					  this.ruler.push(rulerObj);
+					  prov.newRuler(rulerObj);
+				  }
+				  this.prov.push(prov);
 			  }
 		  }
         }

@@ -44,6 +44,11 @@
                  "point":true,
                  "properties":[
                         {
+                         "name":"faction",
+                         "type":"string",
+                         "value":"red"
+                        }, 
+                        {
                          "name":"hasCastle",
                          "type":"bool",
                          "value":true
@@ -84,6 +89,11 @@
                  "name":"cap4",
                  "point":true,
                  "properties":[
+                        {
+                         "name":"faction",
+                         "type":"string",
+                         "value":"red"
+                        }, 
                         {
                          "name":"hasCastle",
                          "type":"bool",
@@ -162,6 +172,11 @@
                  "point":true,
                  "properties":[
                         {
+                         "name":"faction",
+                         "type":"string",
+                         "value":"red"
+                        }, 
+                        {
                          "name":"hasCastle",
                          "type":"bool",
                          "value":true
@@ -239,6 +254,11 @@
                  "point":true,
                  "properties":[
                         {
+                         "name":"faction",
+                         "type":"string",
+                         "value":"blue"
+                        }, 
+                        {
                          "name":"hasCastle",
                          "type":"bool",
                          "value":true
@@ -280,6 +300,11 @@
                  "point":true,
                  "properties":[
                         {
+                         "name":"faction",
+                         "type":"string",
+                         "value":"blue"
+                        }, 
+                        {
                          "name":"hasCastle",
                          "type":"bool",
                          "value":true
@@ -320,6 +345,11 @@
                  "name":"cap10",
                  "point":true,
                  "properties":[
+                        {
+                         "name":"faction",
+                         "type":"string",
+                         "value":"blue"
+                        }, 
                         {
                          "name":"hasCastle",
                          "type":"bool",
