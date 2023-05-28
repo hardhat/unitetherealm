@@ -39,7 +39,7 @@ export default class Province extends Phaser.GameObjects.Group {
 			if(k==this.scene.prov.length) console.log('bad adjacent province:'+list[i]+","+k);
 		}
 		
-		console.log('prov '+this.name+' has '+count+' neighbours');
+		//console.log('prov '+this.name+' has '+count+' neighbours');
 	}
  
     create(){
