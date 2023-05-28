@@ -17,6 +17,7 @@ export default class Bout extends Phaser.Scene {
         this.tapPos = tapPos;
         this.borderOffset = borderOffset;
         this.whoseTurn = -1;
+        this.hud = new Hud({scene: this});
     }
 
     preload ()
@@ -25,6 +26,7 @@ export default class Bout extends Phaser.Scene {
         this.load.tilemapTiledJSON('countryTileMap', 'assets/map/country.json');
         this.load.spritesheet('tiles', 'assets/map/terrain_tiles24.png', {frameWidth: 32, frameHeight: 32});
         this.load.image('Order_Menu','assets/gamemenus/Orders_Menu.png');
+        this.hud.preload();
 
 
 			/*
@@ -71,7 +73,7 @@ export default class Bout extends Phaser.Scene {
 		var x=this.centerX + 200;
 		var y=this.centerY + 400;
 
-    this.hud = new Hud({scene: this});
+    //this.hud = new Hud({scene: this});
     this.hud.create();
 
     /* this.createSounds(); */
@@ -92,7 +94,7 @@ export default class Bout extends Phaser.Scene {
 			this.music.play()
 		})
 	}
-	
+
     var camX = x;
     var camY = y;
     this.cameras.main.setSize(1600, 1200);
@@ -186,7 +188,7 @@ export default class Bout extends Phaser.Scene {
 				  }
 
 				  console.log(object.name+' '+"hasCastle:" + castle + ", ruler:" + ruler + ', faction:' + faction);
-				  
+
 				  const prov = new Province( {scene: this, x: spawnX, y: spawnY, name:object.name, faction:faction, hint:hint, poly:[], hasCastle:castle });
 				  if(ruler) {
 					  const rulerObj = new Ruler({scene: this, name: ruler, faction: faction,homeProv:prov,id:rulerId[id],isPlayer:false});
@@ -204,11 +206,11 @@ export default class Bout extends Phaser.Scene {
 			  }
 		  }
         }
-		
+
 		for(let i=0;i<this.prov.length;i++) {
 			this.prov[i].calcAdjacent();
 		}
-		
+
         if(data.layers[j].type != "tilelayer") {
 			       continue;
 		    }
