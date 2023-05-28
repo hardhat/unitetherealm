@@ -145,6 +145,7 @@ export default class Bout extends Phaser.Scene {
 	  const rulerId = ['🔴','🟠','🟡','🟢','🔵','🟣'];
 	  let id=0;
 	  const playerId=Math.floor(Math.random()*6);
+	  console.log('setting playerId:'+playerId);
 
       const tilewidth = data.tilewidth;
       const tileheight = data.tileheight;
@@ -184,11 +185,12 @@ export default class Bout extends Phaser.Scene {
 					  if(prop['name'] == 'hint') hint=prop['value'];
 				  }
 
-				  //console.log(object.name+' '+"hasCastle:" + castle + ", ruler:" + ruler + ', faction:' + faction);
+				  console.log(object.name+' '+"hasCastle:" + castle + ", ruler:" + ruler + ', faction:' + faction);
 				  
 				  const prov = new Province( {scene: this, x: spawnX, y: spawnY, name:object.name, faction:faction, hint:hint, poly:[], hasCastle:castle });
 				  if(ruler) {
 					  const rulerObj = new Ruler({scene: this, name: ruler, faction: faction,homeProv:prov,id:rulerId[id],isPlayer:false});
+					  console.log("ruler number "+id);
 					  if(playerId==id) {
 						  this.playerRuler=rulerObj;
 						  this.playerId=playerId;
@@ -206,7 +208,6 @@ export default class Bout extends Phaser.Scene {
 		for(let i=0;i<this.prov.length;i++) {
 			this.prov[i].calcAdjacent();
 		}
-		console.log("Player is "+this.playerRuler.name);
 		
         if(data.layers[j].type != "tilelayer") {
 			       continue;
@@ -242,6 +243,7 @@ export default class Bout extends Phaser.Scene {
           }
         }
       }
+	  console.log("Player is "+this.playerRuler.name);
     }
 
 
