@@ -13,7 +13,7 @@ export default class Province extends Phaser.GameObjects.Group {
 
 		this.label = this.addFancyText(x,y);
         this.scene.provText.push(this.label);
-        this.label.text='Prov';
+        this.label.text=hasCastle?'Castle':'Prov';
         
 		//this.scene.container.add(this.label);	// In UI layer.
     }
@@ -26,6 +26,12 @@ export default class Province extends Phaser.GameObjects.Group {
     {
 
     }
+	
+	newRuler(ruler) (
+		this.owner = ruler.name;
+		this.faction = ruler.faction;
+		this.army = {'soldier':0, 'knight':0, 'mage':0};
+	)
 
 	nextMonth() {
 		// Update game state for this province

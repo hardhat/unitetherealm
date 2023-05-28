@@ -31,6 +31,7 @@
   <object id="1" name="cap1" x="418.333" y="68">
    <properties>
     <property name="hasCastle" type="bool" value="true"/>
+    <property name="ruler" value="Brad the Bold"/>
    </properties>
    <point/>
   </object>
@@ -43,6 +44,7 @@
   <object id="3" name="cap4" x="417.333" y="159">
    <properties>
     <property name="hasCastle" type="bool" value="true"/>
+    <property name="ruler" value="George the Wise"/>
    </properties>
    <point/>
   </object>
@@ -67,6 +69,7 @@
   <object id="7" name="cap7" x="472.333" y="254">
    <properties>
     <property name="hasCastle" type="bool" value="true"/>
+    <property name="ruler" value="Alfred the Swift"/>
    </properties>
    <point/>
   </object>
@@ -91,6 +94,7 @@
   <object id="11" name="cap13" x="363.333" y="447">
    <properties>
     <property name="hasCastle" type="bool" value="true"/>
+    <property name="ruler" value="Wilfred the Kind"/>
    </properties>
    <point/>
   </object>
@@ -103,6 +107,7 @@
   <object id="13" name="cap16" x="475" y="506">
    <properties>
     <property name="hasCastle" type="bool" value="true"/>
+    <property name="ruler" value="Stephen the Warrior"/>
    </properties>
    <point/>
   </object>
@@ -115,6 +120,7 @@
   <object id="15" name="cap10" x="523.333" y="333">
    <properties>
     <property name="hasCastle" type="bool" value="true"/>
+    <property name="ruler" value="Frank the Strong"/>
    </properties>
    <point/>
   </object>
