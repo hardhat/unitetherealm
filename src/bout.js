@@ -2,6 +2,7 @@
 //import Phaser from 'phaser'
 import Hud from './hud.js'
 import Province from './province.js'
+import Ruler from './ruler.js'
 
 // Shows level background.  Stretch goal: scroll side to side
 var destination = new Phaser.Geom.Point(15,9);
@@ -138,10 +139,17 @@ export default class Bout extends Phaser.Scene {
 			  const object = data.layers[j].objects[i];
 			  if(object.name.startsWith('cap')) {
 				  console.log("province:"+object.name);
-				  console.log(data.layers[j].objects[i].x);
-				  console.log(data.layers[j].objects[i].y);
 				  
-				  this.prov.push(new Province( {scene: this, x: spawnX, y: spawnY, poly:[], hasCastle:false }));
+				  var castle = false;
+				  
+				  for(let k=0; k<object.properties.length; k++) {
+					  const prop = object.properties[k];
+					  
+					  if(prop['name'] == 'hasCastle') castle=prop['value'];
+				  }
+				  console.log("hasCastle" + castle);
+				  
+				  this.prov.push(new Province( {scene: this, x: spawnX, y: spawnY, poly:[], hasCastle:castle }));
 			  }
 		  }
         }

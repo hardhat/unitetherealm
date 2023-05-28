@@ -16,12 +16,12 @@
             1, 2, 3, 4, 4, 4, 3, 4, 1, 1, 2, 33, 34, 33, 34, 35, 36, 34, 35, 36, 12, 2, 3, 4, 4,
             1, 2, 3, 4, 4, 2, 3, 1, 10, 33, 34, 35, 33, 34, 35, 36, 36, 34, 35, 36, 12, 4, 1, 2, 1,
             2, 3, 4, 1, 2, 3, 4, 1, 10, 33, 34, 35, 33, 34, 35, 36, 15, 11, 11, 11, 7, 3, 1, 1, 2,
-            3, 4, 4, 2, 3, 1, 1, 2, 10, 33, 33, 34, 33, 34, 35, 36, 33, 34, 35, 36, 12, 1, 2, 3, 4,
-            4, 4, 2, 3, 1, 1, 1, 1, 1, 2, 33, 34, 33, 33, 34, 35, 36, 35, 36, 16, 8, 1, 1, 1, 2,
-            4, 1, 1, 1, 1, 2, 3, 4, 3, 4, 33, 33, 2, 35, 33, 33, 34, 35, 36, 12, 1, 1, 2, 3, 4,
-            1, 1, 2, 3, 4, 1, 2, 3, 4, 3, 4, 2, 2, 33, 33, 34, 35, 36, 1, 1, 2, 3, 4, 4, 3,
-            2, 3, 4, 2, 1, 2, 3, 4, 3, 4, 1, 1, 1, 33, 33, 34, 35, 36, 2, 3, 4, 4, 2, 3, 4,
-            2, 3, 4, 1, 2, 3, 4, 2, 3, 4, 1, 1, 1, 2, 3, 1, 1, 2, 3, 4, 2, 3, 4, 4, 4],
+            3, 4, 4, 2, 3, 1, 1, 2, 10, 33, 33, 34, 33, 34, 35, 36, 33, 34, 23, 19, 12, 1, 2, 3, 4,
+            4, 4, 2, 3, 1, 1, 1, 1, 10, 21, 33, 34, 33, 33, 34, 35, 36, 35, 28, 16, 8, 1, 1, 1, 2,
+            4, 1, 1, 1, 1, 2, 3, 4, 3, 13, 33, 16, 13, 35, 33, 33, 34, 35, 28, 12, 1, 1, 2, 3, 4,
+            1, 1, 2, 3, 4, 1, 2, 3, 4, 5, 43, 2, 44, 33, 33, 34, 35, 36, 46, 8, 2, 3, 4, 4, 3,
+            2, 3, 4, 2, 1, 2, 3, 4, 3, 4, 1, 1, 44, 33, 33, 34, 35, 36, 42, 3, 4, 4, 2, 3, 4,
+            2, 3, 4, 1, 2, 3, 4, 2, 3, 4, 1, 1, 5, 43, 43, 43, 43, 43, 38, 4, 2, 3, 4, 4, 4],
          "height":19,
          "id":1,
          "name":"land",
@@ -42,6 +42,12 @@
                  "id":1,
                  "name":"cap1",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":true
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -52,8 +58,14 @@
                 {
                  "height":0,
                  "id":2,
-                 "name":"",
+                 "name":"cap3",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":false
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -64,8 +76,14 @@
                 {
                  "height":0,
                  "id":3,
-                 "name":"",
+                 "name":"cap4",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":true
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -76,8 +94,14 @@
                 {
                  "height":0,
                  "id":4,
-                 "name":"",
+                 "name":"cap6",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":false
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -88,8 +112,14 @@
                 {
                  "height":0,
                  "id":5,
-                 "name":"",
+                 "name":"cap5",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":false
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -100,8 +130,14 @@
                 {
                  "height":0,
                  "id":6,
-                 "name":"",
+                 "name":"cap8",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":false
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -112,8 +148,14 @@
                 {
                  "height":0,
                  "id":7,
-                 "name":"",
+                 "name":"cap7",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":true
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -124,8 +166,14 @@
                 {
                  "height":0,
                  "id":8,
-                 "name":"",
+                 "name":"cap9",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":false
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -136,8 +184,14 @@
                 {
                  "height":0,
                  "id":9,
-                 "name":"",
+                 "name":"cap11",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":false
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -148,8 +202,14 @@
                 {
                  "height":0,
                  "id":10,
-                 "name":"",
+                 "name":"cap12",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":false
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -160,8 +220,14 @@
                 {
                  "height":0,
                  "id":11,
-                 "name":"",
+                 "name":"cap13",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":true
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -172,8 +238,14 @@
                 {
                  "height":0,
                  "id":12,
-                 "name":"",
+                 "name":"cap14",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":false
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -184,8 +256,14 @@
                 {
                  "height":0,
                  "id":13,
-                 "name":"",
+                 "name":"cap16",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":true
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -196,8 +274,14 @@
                 {
                  "height":0,
                  "id":14,
-                 "name":"",
+                 "name":"cap17",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":false
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -208,8 +292,14 @@
                 {
                  "height":0,
                  "id":15,
-                 "name":"",
+                 "name":"cap10",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":true
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -220,8 +310,14 @@
                 {
                  "height":0,
                  "id":16,
-                 "name":"",
+                 "name":"cap15",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":false
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -232,8 +328,14 @@
                 {
                  "height":0,
                  "id":17,
-                 "name":"",
+                 "name":"cap18",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":false
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -246,13 +348,30 @@
                  "id":18,
                  "name":"cap2",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"hasCastle",
+                         "type":"bool",
+                         "value":false
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":0,
                  "x":480,
                  "y":122
-                }, 
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":5,
+         "name":"provinces",
+         "objects":[
                 {
                  "height":0,
                  "id":19,
@@ -335,12 +454,12 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "x":0,
          "y":0
         }],
- "nextlayerid":4,
- "nextobjectid":21,
+ "nextlayerid":6,
+ "nextobjectid":24,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.1",
