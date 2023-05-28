@@ -32,6 +32,7 @@
    <properties>
     <property name="faction" value="red"/>
     <property name="hasCastle" type="bool" value="true"/>
+    <property name="hint" value="cap2,cap4,cap3"/>
     <property name="ruler" value="Brad the Bold"/>
    </properties>
    <point/>
@@ -40,6 +41,7 @@
    <properties>
     <property name="faction" value="red"/>
     <property name="hasCastle" type="bool" value="true"/>
+    <property name="hint" value="cap1,cap2,cap6,cap7"/>
     <property name="ruler" value="George the Wise"/>
    </properties>
    <point/>
@@ -47,12 +49,14 @@
   <object id="4" name="cap6" x="350" y="225">
    <properties>
     <property name="hasCastle" type="bool" value="false"/>
+    <property name="hint" value="cap4,cap7,cap11,cap9"/>
    </properties>
    <point/>
   </object>
   <object id="5" name="cap5" x="546.667" y="195">
    <properties>
     <property name="hasCastle" type="bool" value="false"/>
+    <property name="hint" value="cap2,cap4,cap3,cap7,cap8"/>
    </properties>
    <point/>
   </object>
@@ -87,6 +91,7 @@
   <object id="18" name="cap2" x="480" y="122">
    <properties>
     <property name="hasCastle" type="bool" value="false"/>
+    <property name="hint" value="cap1,cap4,cap3,cap5"/>
    </properties>
    <point/>
   </object>
@@ -113,6 +118,7 @@
   <object id="27" name="cap3" x="703.333" y="103">
    <properties>
     <property name="hasCastle" type="bool" value="false"/>
+    <property name="hint" value="cap1,cap2,cap5"/>
    </properties>
    <point/>
   </object>

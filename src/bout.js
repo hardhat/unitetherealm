@@ -33,8 +33,8 @@ export default class Bout extends Phaser.Scene {
 	*/
 
         this.load.audio('uhh', [ 'assets/sfx/uhh.wav','assets/sfx/uhh.mp3','assets/sfx/uhh.ogg' ]);
-        this.load.audio('maintheme', [ 'assets/sfx/maintheme.ogg','assets/sfx/maintheme.mp3' ]);
-        this.load.audio('dractheme', [ 'assets/sfx/dractheme.ogg','assets/sfx/dractheme.mp3' ]);
+        //this.load.audio('maintheme', [ 'assets/sfx/maintheme.ogg','assets/sfx/maintheme.mp3' ]);
+        //this.load.audio('dractheme', [ 'assets/sfx/dractheme.ogg','assets/sfx/dractheme.mp3' ]);
     }
 
     create ()
@@ -128,7 +128,7 @@ export default class Bout extends Phaser.Scene {
       const tilewidth = data.tilewidth;
       const tileheight = data.tileheight;
 	  this.tileHeight = tileheight;
-    this.tileWidth = tilewidth;
+      this.tileWidth = tilewidth;
 
       var tileWidthHalf = tilewidth / 2;
       var tileHeightHalf = tileheight / 2;
@@ -138,7 +138,7 @@ export default class Bout extends Phaser.Scene {
 
       this.layers = [];
       for(let j = 0; j < data.layers.length; j++){
-        console.log(j);
+        //console.log(j);
         if(data.layers[j].type == "objectgroup"){
 
 		  // find poly and anchor
@@ -147,11 +147,12 @@ export default class Bout extends Phaser.Scene {
 			  var spawnY = data.layers[j].objects[i].y;
 			  const object = data.layers[j].objects[i];
 			  if(object.name.startsWith('cap')) {
-				  console.log("province:"+object.name);
+				  //console.log("province:"+object.name);
 
 				  var castle = false;
 				  var ruler = false;
 				  var faction = false;
+				  var hint = '';
 
 				  for(let k=0; k<object.properties.length; k++) {
 					  const prop = object.properties[k];
@@ -159,12 +160,12 @@ export default class Bout extends Phaser.Scene {
 					  if(prop['name'] == 'hasCastle') castle=prop['value'];
 					  if(prop['name'] == 'ruler') ruler=prop['value'];
 					  if(prop['name'] == 'faction') faction=prop['value'];
-					
+					  if(prop['name'] == 'hint') hint=prop['value'];
 				  }
 
-				  console.log("hasCastle:" + castle + ", ruler:" + ruler + ', faction:' + faction);
+				  console.log(object.name+' '+"hasCastle:" + castle + ", ruler:" + ruler + ', faction:' + faction);
 				  
-				  const prov = new Province( {scene: this, x: spawnX, y: spawnY, poly:[], hasCastle:castle });
+				  const prov = new Province( {scene: this, x: spawnX, y: spawnY, name:object.name, hint:hint, poly:[], hasCastle:castle });
 				  if(ruler) {
 					  const rulerObj = new Ruler({scene: this, name: ruler, faction: faction,homeProv:prov,id:0,isPlayer:false});
 					  this.ruler.push(rulerObj);
@@ -176,6 +177,11 @@ export default class Bout extends Phaser.Scene {
 		  }
 
         }
+		
+		for(let i=0;i<this.prov.length;i++) {
+			this.prov[i].calcAdjacent();
+		}
+		
         if(data.layers[j].type != "tilelayer") {
 			       continue;
 		    }

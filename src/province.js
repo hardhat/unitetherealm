@@ -1,22 +1,45 @@
 export default class Province extends Phaser.GameObjects.Group {
-    constructor ({scene,x,y,poly,hasCastle}) {
+    constructor ({scene,x,y,name,hint,poly,hasCastle}) {
         super(scene);
 
         this.scene=scene;
 
 		this.x=x;
 		this.y=y;
-		this.owner='unaligned';
-		this.faction='none';
-		this.hasCastle=hasCastle;
+		this.name = name;
+		this.owner = 'unaligned';
+		this.faction = 'none';
+		this.hasCastle = hasCastle;
 		this.army = {'soldier':0, 'knight':0, 'mage':0};
-
+		this.adjacentProv = Array();
+		this.adjacentHint = hint;
+		
 		this.label = this.addFancyText(x,y);
         this.scene.provText.push(this.label);
         this.label.text=hasCastle?'Castle':'Prov';
         
 		//this.scene.container.add(this.label);	// In UI layer.
     }
+	
+	calcAdjacent() {
+		var list=this.adjacentHint.split(',');
+		var count=0;
+		
+		for(let i=0;i<list.length;i++) {
+			var k;
+			
+			for(k=0;k<this.scene.prov.length;k++) {
+				if(list[i] == this.scene.prov[k].name) {
+						this.adjacentProv.push(this.scene.prov[k]);
+						count++;
+						break;
+				}
+			}
+			if(k==this.scene.prov.length) console.log('bad adjacent province:'+list[i]);
+		}
+		
+		console.log('prov '+this.name+' has '+count+' neighbours');
+	}
  
     create(){
 
@@ -26,6 +49,10 @@ export default class Province extends Phaser.GameObjects.Group {
     {
 
     }
+	
+	adjacent() {
+		return this.adjacentProv;
+	}
 		
 	might() {
 		const s=this.army['soldier'];

@@ -54,6 +54,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"hint",
+                         "type":"string",
+                         "value":"cap2,cap4,cap3"
+                        }, 
+                        {
                          "name":"ruler",
                          "type":"string",
                          "value":"Brad the Bold"
@@ -82,6 +87,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"hint",
+                         "type":"string",
+                         "value":"cap1,cap2,cap6,cap7"
+                        }, 
+                        {
                          "name":"ruler",
                          "type":"string",
                          "value":"George the Wise"
@@ -103,6 +113,11 @@
                          "name":"hasCastle",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"hint",
+                         "type":"string",
+                         "value":"cap4,cap7,cap11,cap9"
                         }],
                  "rotation":0,
                  "type":"",
@@ -121,6 +136,11 @@
                          "name":"hasCastle",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"hint",
+                         "type":"string",
+                         "value":"cap2,cap4,cap3,cap7,cap8"
                         }],
                  "rotation":0,
                  "type":"",
@@ -231,6 +251,11 @@
                          "name":"hasCastle",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"hint",
+                         "type":"string",
+                         "value":"cap1,cap4,cap3,cap5"
                         }],
                  "rotation":0,
                  "type":"",
@@ -313,6 +338,11 @@
                          "name":"hasCastle",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"hint",
+                         "type":"string",
+                         "value":"cap1,cap2,cap5"
                         }],
                  "rotation":0,
                  "type":"",
