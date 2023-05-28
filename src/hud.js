@@ -3,18 +3,17 @@
 // Heads up display shows the status of each character.  What is their health meter?  What is their power up energy for a special move?
 
 export default class Hud extends Phaser.GameObjects.Group {
-    constructor ({scene, player, npc}) {
+    constructor ({scene}) {
         super(scene);
 
         this.scene=scene;
-        this.player=player;
-        this.npc=npc;
+
 
         //this.bg = this.scene.add.image(0,0,'hudBg').setOrigin(0, 0);
         this.width = 800;
 
         //this.healthbar = scene.add.sprite(2,2,'healthbar').setOrigin(0, 0);
-        
+
         this.score = 0;
         //this.score.pts = int;
         //this.score.pts = 0;
@@ -29,7 +28,13 @@ export default class Hud extends Phaser.GameObjects.Group {
         this.scene.hudText[3].text='Enemy: ';
 		this.scene.container.add(this.scene.hudText);	// In UI layer.
     }
-
+    preload(){
+      this.scene.load.image('Order_Menu','assets/gamemenus/Orders_Menu.png');
+    }
+    create(){
+      this.normalButtonList = [];
+      this.scene.add.image(0,0, 'Order_Menu').setOrigin(0,0);
+    }
     update ()
     {
         this.updateHealth();
@@ -41,21 +46,6 @@ export default class Hud extends Phaser.GameObjects.Group {
         text.setStroke('#00f', 5);
         text.setShadow(2,2,'#333333',2,true,true);
         return text;
-    }
-
-    updateHealth ()
-    {
-        /*this.healthbar.crop(new Phaser.Rectangle(0, 0, (this.player.health / this.player.maxHealth) * this.width, 10));
-        this.healthbar.updateCrop();*/
-        this.scene.hudText[0].text = '' + this.player.health + '/' + this.player.maxHealth;
-		if(this.scene.whoseTurn!=-1) {
-			const w=this.scene.whoseTurn;
-			this.scene.hudText[3].text='Enemy: '+this.npc[w].enemyType;
-			this.scene.hudText[1].text = '' + this.npc[w].health + '/' + this.npc[w].maxHealth;
-		} else {
-			this.scene.hudText[3].text='Enemy: ';
-			this.scene.hudText[1].text = '';
-		}
     }
 
     updateScore(amount)
