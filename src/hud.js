@@ -35,12 +35,18 @@ export default class Hud extends Phaser.GameObjects.Group {
     create(){
       this.scene.add.image(0,0, 'Order_Menu').setOrigin(0,0);
       this.clickCount = 0;
-      this.scene.clickButton = new TextButton(this.scene, 38, 38, 'Go Raiding', {fill: '#000'}, () => this.updateClickCountText());
-      this.scene.add.existing(this.scene.clickButton);
-      this.scene.clickButton.on('pointerup', () => {
-        this.clickCount++;
-      })
 
+      this.scene.raidButton = new TextButton(this.scene, 38, 38, 'Go Raiding', {fill: '#000'}, () => this.updateClickCountText());
+      this.scene.add.existing(this.scene.raidButton);
+
+      this.scene.growButton = new TextButton(this.scene, 38, 68, 'Grow Your Territory', {fill: '#000'}, () => this.updateClickCountText());
+      this.scene.add.existing(this.scene.growButton);
+
+      this.scene.stormButton = new TextButton(this.scene, 38, 98, 'Storm The Castle', {fill: '#000'}, () => this.updateClickCountText());
+      this.scene.add.existing(this.scene.stormButton);
+
+      this.scene.armyButton = new TextButton(this.scene, 38, 128, 'Build Your Army', {fill: '#000'}, () => this.updateClickCountText());
+      this.scene.add.existing(this.scene.armyButton);
 
       /*this.scene.raidButton = this.scene.add.text(38,38,'Go Raiding',{fill: '#000'})
       .setInteractive()

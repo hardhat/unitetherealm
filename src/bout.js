@@ -21,9 +21,9 @@ export default class Bout extends Phaser.Scene {
 
     preload ()
     {
-        this.load.json('graveyard', 'assets/map/graveyard.json');
-        this.load.tilemapTiledJSON('graveyardTileMap', 'assets/map/graveyard.json');
-        this.load.spritesheet('tiles', 'assets/map/iso-64x64-outside.png', {frameWidth: 64, frameHeight: 64});
+        this.load.json('country', 'assets/map/country.json');
+        this.load.tilemapTiledJSON('countryTileMap', 'assets/map/country.json');
+        this.load.spritesheet('tiles', 'assets/map/terrain_tiles24.png', {frameWidth: 32, frameHeight: 32});
         this.load.image('Order_Menu','assets/gamemenus/Orders_Menu.png');
 
 
@@ -117,14 +117,17 @@ export default class Bout extends Phaser.Scene {
 
 
     buildMap(){
-      /*var scene = this
-      const data = scene.cache.json.get('graveyard');
-      var map = this.add.tilemap('graveyard');
+      var scene = this
+      const data = scene.cache.json.get('country');
+      var map = this.add.tilemap('country');
+	  this.prov = Array();
+	  this.provText = Array();
       console.log(map);
 
       const tilewidth = data.tilewidth;
       const tileheight = data.tileheight;
 	  this.tileHeight = tileheight;
+    this.tileWidth = tilewidth;
 
       var tileWidthHalf = tilewidth / 2;
       var tileHeightHalf = tileheight / 2;
@@ -136,7 +139,7 @@ export default class Bout extends Phaser.Scene {
       for(let j = 0; j < data.layers.length; j++){
         console.log(j);
         if(data.layers[j].type == "objectgroup"){
-<<<<<<< Updated upstream
+
 		  // find poly and anchor
 		  for(let i = 0; i < data.layers[j].objects.length; i++) {
 			  var spawnX = data.layers[j].objects[i].x;
@@ -157,7 +160,7 @@ export default class Bout extends Phaser.Scene {
 				  this.prov.push(new Province( {scene: this, x: spawnX, y: spawnY, poly:[], hasCastle:castle }));
 			  }
 		  }
-=======
+
           var spawnX = data.layers[j].objects[0].x;
           var spawnY = data.layers[j].objects[0].y;
           const object = data.layers[j].data;
@@ -165,8 +168,12 @@ export default class Bout extends Phaser.Scene {
           console.log(data.layers[j].objects[0].x);
           console.log(data.layers[j].objects[0].y);
           return {x: spawnX, y: spawnY};
->>>>>>> Stashed changes
+
         }
+        if(data.layers[j].type != "tilelayer") {
+			       continue;
+		    }
+		    // Apply tile layer
         const layer = data.layers[j].data;
         this.layers.push(layer);
 
@@ -176,8 +183,8 @@ export default class Bout extends Phaser.Scene {
 		this.mapacross=mapwidth;
 		this.mapdown=mapheight;
 
-        const centerX = 0;//mapwidth * tileWidthHalf;
-        const centerY = 0;//16;
+        const centerX = tilewidth/2;//mapwidth * tileWidthHalf;
+        const centerY = tileheight/2;//16;
 
 		this.centerX = centerX;
 		this.centerY = centerY;
@@ -187,8 +194,8 @@ export default class Bout extends Phaser.Scene {
           for(let x = 0; x < mapwidth; x++){
             const id = layer[i] - 1;
 
-            const tx = (x-y) * tileWidthHalf;
-            const ty = (x+y) * tileHeightHalf;
+            const tx = x * tilewidth;
+            const ty = y * tileheight;
             if(id != -1){
 				const tile = scene.add.image(centerX + tx, centerY + ty, 'tiles', id);
 				this.playfield.add(tile);
@@ -198,7 +205,7 @@ export default class Bout extends Phaser.Scene {
             i++;
           }
         }
-      }*/
+      }
     }
 
 
