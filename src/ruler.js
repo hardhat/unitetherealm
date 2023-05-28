@@ -112,31 +112,76 @@ export default class Ruler extends Phaser.GameObjects.Group {
 				}
 			} while(unstable);
 			
-			actions.push( {step:'recruit soldiers',count:sol} );
-			actions.push( {step:'recruit knights',count:kni} );
-			actions.push( {step:'recruit mages',count:mag} );
+			this.actions.push( {step:'recruit soldiers',count:sol} );
+			this.actions.push( {step:'recruit knights',count:kni} );
+			this.actions.push( {step:'recruit mages',count:mag} );
 		}
 		
 		while(1) {
 			tar = this.findTarget();
 			if(!tar) return;
 			if( tar.owner == this.name) {
-			actions.push( {step:'move',target:tar});
+			this.actions.push( {step:'move',target:tar});
 			} else if(tar.hasCastle == false) {
-				actions.push( {step:'attack',target:tar});
+				this.actions.push( {step:'attack',target:tar});
 				return;
 			} else if(tar.might()>this.might()*1.2) {
-				actions.push( {step:'raid',target:tar});
+				this.actions.push( {step:'raid',target:tar});
 				return;
 			} else {
-				actions.push( {step:'seige',target:tar});
+				this.actions.push( {step:'seige',target:tar});
 				return;
 			}
 		}
 	}
 	
-	applyActions() {
+	attack(from,to) {
+		const f=from.might();
+		const t=to.might();
 		
+		if(f>t) {
+			to.army['soldier']-=6;
+			if(to.arm['soldier']<0) {
+				to['knights']--;
+				if(to.mage) {
+					
+				}
+			}
+		}
+	}
+	
+	applyBattle(target) {
+		// for now do to the end of battle.
+		while(this.might()>0 && target.might()>0) {
+			attack(this,target);
+			attack(target,this);
+		}
+	}
+	
+	applyActions() {
+		if(this.actions.length==0) return 0;
+		const action=this.actions.shift();
+		
+		if(action.step=='move') {
+			const oldPos=this.armyPos;
+			this.armyPos=action.target;
+			oldPos.updateIcon();
+			this.armyPos.updateIcon();
+		} else if(action.step=='attack') {
+			applyBattle(action.target);
+		} else if(action.step=='raid') {
+			action.target.ruler.wasRobbed=true;
+			const amount=Math.ceil(action.target.ruler.calcTaxes()/2);
+			this.gold += amount;
+		} else if(action.step=='seige') {
+			applyBattle(action.target);		
+		}
+		
+		return action;
+	}
+	
+	calcTaxes() {
+		return 12*holdings.length + 3*holdings.length*holdings.length;
 	}
 
 	nextMonth() {
@@ -149,7 +194,7 @@ export default class Ruler extends Phaser.GameObjects.Group {
 				}
 		}
 		this.holdings = holdings;
-		var taxes = 12*holdings.length + 3*holdings.length*holdings.length;
+		var taxes = calcTaxes();
 		if(this.wasRobbed) {
 			taxes = Math.floor(taxes/2);
 		}
