@@ -24,7 +24,7 @@
 4,1,1,39,47,33,33,32,24,20,16,9,13,35,33,33,34,35,28,12,1,1,2,3,4,
 1,1,2,3,39,47,33,31,27,23,12,2,44,33,33,34,35,36,46,8,2,3,4,4,3,
 2,3,4,2,1,39,43,43,43,43,8,1,44,33,33,34,35,36,42,3,4,4,2,3,4,
-2,3,4,1,2,3,4,2,3,4,1,1,5,43,43,43,43,43,38,4,2,3,4,4,4
+2,3,4,1,2,3,4,2,3,4,1,1,39,43,43,43,43,43,38,4,2,3,4,4,4
 </data>
  </layer>
  <objectgroup id="2" name="capitals">
@@ -96,12 +96,6 @@
    <properties>
     <property name="hasCastle" type="bool" value="false"/>
     <property name="hint" value="cap1,cap2,cap5,cap8"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="28" name="cap17" x="323" y="443">
-   <properties>
-    <property name="hasCastle" type="bool" value="false"/>
    </properties>
    <point/>
   </object>
