@@ -27,9 +27,9 @@ export default class Ruler extends Phaser.GameObjects.Group {
     }
 	
 	might() {
-		const s=this.army['soldier'];
-		const k=this.army['knight'];
-		const m=this.army['mage'];
+		const s=this.army['soldier']>0?this.army['soldier']:0;
+		const k=this.army['knight']>0?this.army['knight']:0;
+		const m=this.army['mage']>0?this.army['mage']:0;
 		
 		return s+k*10+m*24;
 	}
@@ -168,10 +168,19 @@ export default class Ruler extends Phaser.GameObjects.Group {
 	}
 	
 	applyActions() {
-		if(this.actions.length==0) return 0;
+		if(this.actions.length==0) return null;
 		const action=this.actions.shift();
 		
-		if(action.step=='move') {
+		if(action.step=='recruit soldiers') {
+			this.army['soldier']+=action.count;
+			this.gold-=this.cost(action.count,0,0);
+		} else if(action.step=='recruit knights') {
+			this.army['knight']+=action.count;
+			this.gold-=this.cost(0,action.count,0);
+		} else if(action.step=='recruit mages') {
+			this.army['mage']+=action.count;
+			this.gold-=this.cost(0,0,action.count);
+		} else if(action.step=='move') {
 			const oldPos=this.armyPos;
 			this.armyPos=action.target;
 			oldPos.updateIcon();

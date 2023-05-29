@@ -18,9 +18,8 @@ export default class Hud extends Phaser.GameObjects.Group {
         this.mageCount = mageCount;
     }
     preload(){
-      this.scene.load.image('Order_Menu','assets/gamemenus/Orders_Menu.png');
-      this.scene.load.image('Build_YourArmy','assets/gamemenus/Build_YourArmy.png');
-      this.scene.load.image('test','assets/gamemenus/test.png');
+      this.scene.load.image('background','assets/gamemenus/Background.png');
+
     }
     create(){
       this.clickCount = 0;
@@ -28,10 +27,10 @@ export default class Hud extends Phaser.GameObjects.Group {
       this.armyButtonList = []; // creates list for build your army buttons
       this.growButtonList = []; //creats list for grow territory buttons
       this.armyTextList = []; //create a list of all text need for the build your army shop
-      //var orderMenuImage = this.scene.add.image(0,0, 'Order_Menu');
+      this.orderMenuImage = this.scene.add.image(0,0, 'background');
 
       //var orderMenuImage = this.scene.add.image(0,0, 'test');
-      //this.orderMenuImage = orderMenuImage;
+
         console.log(this.menuOption);
         this.scene.raidButton = new TextButton(this.scene, 38, 38, 'Go Raiding', {fill: '#000'}, () => this.goRaiding());
         this.scene.add.existing(this.scene.raidButton);
@@ -61,7 +60,7 @@ export default class Hud extends Phaser.GameObjects.Group {
         this.scene.add.existing(this.scene.buyMage);
         this.armyButtonList.push(this.scene.buyMage);
 
-        this.scene.armyFinish = new TextButton(this.scene, 18, 148, 'Finish', {fill: '#000'}, () => this.buildYourArmy('finish'));
+        this.scene.armyFinish = new TextButton(this.scene, 20, 148, 'Finish', {fill: '#000'}, () => this.buildYourArmy('finish'));
         this.scene.add.existing(this.scene.armyFinish);
         this.armyButtonList.push(this.scene.armyFinish);
 
@@ -70,7 +69,7 @@ export default class Hud extends Phaser.GameObjects.Group {
         this.armyButtonList.push(this.scene.armyBuy);
 
 
-        var text1 = this.scene.add.text(18,15, 'Buy Units', {fill: '#000'});
+        var text1 = this.scene.add.text(18,20, 'Buy Units', {fill: '#000'});
         this.armyTextList.push(text1);
         var text2 = this.scene.add.text(110,38, 'Cost', {fill: '#000'});
         this.armyTextList.push(text2);
@@ -186,37 +185,30 @@ export default class Hud extends Phaser.GameObjects.Group {
     }
     drawMenus(){
     if(this.menuOption == 0){
-        //this.orderMenuImage.setOrigin(0,0);
+        this.orderMenuImage.setOrigin(0,0);
         this.visible = true;
         this.showButtons('Order');
         this.hideButtons('Army');
         this.hideText();
       } else if (this.menuOption == 4){
-        this.visible = false;
         this.hideButtons('Order');
         this.showButtons('Army');
         //this.scene.add.image(0,0,'test').setOrigin(0,0);
-        this.soilderTotalText.setVisible(true);
-        this.knightTotalText.setVisible(true);
-        this.mageTotalText.setVisible(true);
         this.showText();
       } else if (this.menuOption == 2){
-        this.visible = false;
         this.hideButtons('Order');
         this.hideButtons('Army');
         this.scene.add.text(38,68,'Pick A territory to claim', {fill: '#000'});
       } else if (this.menuOption == 1){
-        this.visible = false;
         this.hideButtons('Order');
         this.hideButtons('Army');
         this.scene.add.text(38,68,'Get That Gold BOiiiii', {fill: '#000'});
       } else if (this.menuOption == 3){
-        this.visible = false;
         this.hideButtons('Order');
         this.hideButtons('Army');
         this.scene.add.text(38,68,'let that Castle feel that heat', {fill: '#000'});
       }
-      //this.orderMenuImage.setVisible(this.visible);
+      this.orderMenuImage.setVisible(this.visible);
     }
     update ()
     {
