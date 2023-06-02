@@ -21,6 +21,7 @@ export default class MainMenu extends Phaser.Scene {
         this.load.image('jamWindow', 'assets/menu/jamWindow.png');
         this.load.image('goat', 'assets/menu/Button_GOAT.png');
         this.load.image('tojam', 'assets/menu/Button_ToJam.png');
+        this.load.image('rulesButton', 'assets/menu/Button_Rules.png');
         this.load.image('credits', 'assets/menu/credits.png');
         this.load.image('rulesWindow', 'assets/menu/rulesScreen.png');
 
